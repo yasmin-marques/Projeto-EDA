@@ -10,15 +10,13 @@
 #include <vector>
 #include <list>
 
-
 // Classe genérica de uma tabela hash com encadeamento
 template <typename Key, typename Data, typename Hash = std::hash<Key>, typename Compare = std::less<Key>>
 class chained_hash_table {
 private:
-
-    std::vector<std::list<std::pair<Key, Data>>>* m_table; // ponteiro para o vetor de listas de pares
     size_t m_number_of_elements;   // total de elementos na tabela
     size_t m_table_size;           // tamanho atual da tabela
+    std::vector<std::list<std::pair<Key, Data>>>* m_table; // ponteiro para o vetor de listas de pares
     float m_load_factor;           // fator de carga atual
     float m_max_load_factor;       // fator de carga máximo permitido antes de rehash
     Hash m_hashing;                // functor para função de hash
@@ -26,8 +24,8 @@ private:
 
     std::vector<std::pair<Key, Data>> m_sorted_pairs;   // vetor ordenado (para iterador)
     bool m_needs_update;                                // marca se precisa reordenar os pares
-    unsigned int num_comparisons;                       // número de comparações realizadas
-    unsigned int num_collisions;                        // número de colisões realizadas
+    mutable size_t num_comparisons;                       // número de comparações realizadas
+    mutable size_t num_collisions;                        // número de colisões realizadas
 
     // Retorna o próximo número primo maior que x
     size_t get_next_prime(size_t x) {

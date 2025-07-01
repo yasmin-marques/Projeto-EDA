@@ -34,8 +34,8 @@ private:
 
     std::vector<std::pair<Key, Data>> m_sorted_pairs;   // vetor ordenado (para iterador)
     bool m_needs_update;                                // marca se precisa reordenar os pares
-    unsigned int num_comparisons;                       // número de comparações realizadas
-    unsigned int num_collisions;                        // número de colisões realizadas
+    mutable size_t  num_comparisons;                       // número de comparações realizadas
+    mutable size_t  num_collisions;                        // número de colisões realizadas
     int total_probes = 0;                               // número de sondagens realizadas (colisões tratadas)
     int insertion_count = 0;                            // número de inserções feitas na tabela
     int max_probe = 0;                                  // maior número de sondagens ocorridas em uma única inserção
