@@ -26,7 +26,7 @@ class avl_tree {
 private:
     avl_node<Key, Data>* m_root = nullptr;      // raiz da árvore
     unsigned int m_size = 0;                    // número de elementos na árvore
-    Compare m_compare;                           // objeto de comparação
+    Compare m_compare;                          // objeto de comparação
     unsigned int num_comparisons = 0;           // número de comparação realizadas
     unsigned int num_rotation = 0;              // número de rotações realizadas
 

@@ -126,6 +126,8 @@ public:
         result += "Tamanho do dicionário:      " + std::to_string(this->size()) + "\n";
         result += "Número de comparações:      " + std::to_string(m_dict.comparisons()) + '\n';
         result += "Número de colisões:         " + std::to_string(m_dict.collisions()) + '\n';
+        result += "Média de acesso:            " + std::to_string(m_dict.average_access_length()) + '\n';
+        result += "Acesso máximo:              " + std::to_string(m_dict.max_access_length()) + '\n';
         result += "---------------------------------------------\n";
         result += "Palavra                  | Frequência\n";
         result += "---------------------------------------------\n";

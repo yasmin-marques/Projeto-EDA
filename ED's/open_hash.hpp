@@ -30,12 +30,17 @@ private:
     float m_load_factor;           // fator de carga atual
     float m_max_load_factor;       // fator de carga máximo permitido antes de rehash
     Hash m_hashing;                // functor para função de hash
-    Compare m_compare;              // functor de comparação
+    Compare m_compare;             // objeto comparador de chaves
 
     std::vector<std::pair<Key, Data>> m_sorted_pairs;   // vetor ordenado (para iterador)
     bool m_needs_update;                                // marca se precisa reordenar os pares
-    mutable std::size_t num_comparisons;                // número de comparação realizadas
-    mutable std::size_t num_collisions;                 // número de colisões realizadas
+    unsigned int num_comparisons;                       // número de comparações realizadas
+    unsigned int num_collisions;                        // número de colisões realizadas
+    int total_probes = 0;                               // número de sondagens realizadas (colisões tratadas)
+    int insertion_count = 0;                            // número de inserções feitas na tabela
+    int max_probe = 0;                                  // maior número de sondagens ocorridas em uma única inserção
+
+
 
     // Retorna o próximo número primo maior que x
     size_t get_next_prime(size_t x) {
@@ -44,7 +49,6 @@ private:
         while (true) {
             bool is_prime = true;
             for (size_t i = 3; i <= sqrt(x); i += 2) {
-                num_comparisons++;
                 if (x % i == 0) {
                     is_prime = false;
                     break;
@@ -56,19 +60,20 @@ private:
     }
 
     // Calcula o índice de uma chave com sondagem dupla
+    // Usa i como tentativa (probe) na função de hash
     size_t hash_code(const Key& key, size_t i) const {
         size_t h1 = m_hashing(key);
         size_t h2 = 1 + (h1 % (m_table_size - 1));
         return (h1 + i * h2) % m_table_size;
     }
 
-    // Atualiza vetor com os pares ordenados
+    // Atualiza o vetor auxiliar com os pares ativos, ordenados por chave
     void update_sorted_pairs() {
         m_sorted_pairs.clear();
         m_sorted_pairs.reserve(m_number_of_elements);       // reserva espaço
-        for (const auto& e : m_table) {
+        for(const auto& e : m_table) {
             num_comparisons++;                                
-            if (e.state == ACTIVE) {
+            if(e.state == ACTIVE) {
                 m_sorted_pairs.emplace_back(e.key, e.data);   // adiciona chave ativa
             }
         }
@@ -130,7 +135,6 @@ public:
 
     // Redimensiona a tabela e redistribui os elementos
     void rehash(size_t new_size) {
-        num_comparisons++;
         if (new_size <= m_table_size) return;
         new_size = get_next_prime(new_size);
 
@@ -156,20 +160,22 @@ public:
 
     // Insere um novo elemento com chave e dado
     bool insert(const Key& key, const Data& data) {
-        num_comparisons++;
         if (load_factor() >= m_max_load_factor) {
             rehash(2 * m_table_size);
         }
 
-        size_t first_deleted = m_table_size; // marca slot reutilizável
+        size_t first_deleted = m_table_size;    // marca slot reutilizável
+        int probes = 0;                         // Contador de sondagens nesta inserção
 
         for (size_t i = 0; i < m_table_size; ++i) {
             size_t slot = hash_code(key, i);
+            probes++; // conta mais uma sondagem
 
             if (m_table[slot].state == ACTIVE) {
                 num_comparisons++;
                 if (m_table[slot].key == key) return false; // já existe
-                num_collisions++;   // houve colisão
+                num_comparisons++;
+                num_collisions++;                           // colisão real
             } else if (m_table[slot].state == DELETED) {
                 num_comparisons++;
                 if (first_deleted == m_table_size) first_deleted = slot;
@@ -179,20 +185,33 @@ public:
                 m_table[target] = {key, data, ACTIVE};
                 m_number_of_elements++;
                 m_needs_update = true;
+
+                // Métricas adicionadas:
+                total_probes += probes;
+                insertion_count++;
+                max_probe = std::max(max_probe, probes); // atualiza pior caso
+
                 return true;
             }
         }
 
+        // Tabela cheia mas há posição DELETED reutilizável
         if (first_deleted != m_table_size) {
-            num_comparisons++;
             m_table[first_deleted] = {key, data, ACTIVE};
             m_number_of_elements++;
             m_needs_update = true;
+
+            // Métricas adicionadas:
+            total_probes += probes;
+            insertion_count++;
+            max_probe = std::max(max_probe, probes); // atualiza pior caso
+
             return true;
         }
 
-        return false;
+        return false; // inserção falhou (tabela cheia sem espaço DELETED)
     }
+
 
     // Remove um par pela chave
     bool remove(const Key& key) {
@@ -250,10 +269,23 @@ public:
         throw std::out_of_range("Key not found");
     }
 
+    // Retorna o número médio de sondagens (probes) realizadas por inserção.
+    // É uma medida da eficiência média de acesso na tabela.
+    float average_access_length() const {
+        if (insertion_count == 0) return 0.0f;
+        return static_cast<float>(total_probes) / insertion_count;
+    }
+
+    // Retorna o número máximo de sondagens (probes) feitas em uma única inserção.
+    // Indica o pior caso de colisões durante a inserção na tabela.
+    int max_access_length() const {
+        return max_probe;
+    }
+
     // Retorna o nome da estrutura (usado no relatório/saída)
     std::string name() const { return "Open Hash Table"; }
 
-    // Classe iterator para percorrer a hash table em ordem
+    // Classe iterator para percorrer a hash table em ordem linear de índice
     class iterator {
     private:
         const open_hash_table* m_ht;    // ponteiro para a hash table
@@ -286,14 +318,14 @@ public:
         }
     };
 
-    // Retorna o início da iteração (posição 0 no vetor ordenado)
+    // Retorna o início da iteração
     // Se o vetor ainda não foi atualizado, atualiza antes
     iterator begin() {
         if(m_needs_update) update_sorted_pairs();
         return iterator(this, 0);
     }
 
-    // Retorna o fim da iteração (última posição)
+    // Retorna o fim da iteração
     // Também atualiza se necessário
     iterator end() {
         if(m_needs_update) update_sorted_pairs();

@@ -32,7 +32,7 @@ private:
     rb_node<Key, Data>* m_root;         // raiz da árvore
     rb_node<Key, Data>* nil;            // nó nulo
     unsigned int m_size = 0;            // quantidade de elementos
-    Compare _compare;                   // objeto de comparação
+    Compare m_compare;                   // objeto de comparação
     unsigned int num_comparisons = 0;   // número de comparações feitas
     unsigned int num_rotation = 0;      // número de rotações feitas
 
@@ -138,7 +138,7 @@ private:
     rb_node<Key, Data>* _search(rb_node<Key, Data>* p, const Key& k) {
         while(p != nil && k != p->key.first) {
             num_comparisons++;
-            if(_compare(k, p->key.first)) p = p->m_left;
+            if(m_compare(k, p->key.first)) p = p->m_left;
             else p = p->m_right;
         }
         return p;
@@ -286,7 +286,8 @@ public:
     // Retorna o número de comparações realizadas
     unsigned int comparisons() const { return num_comparisons; }
 
-    // Insere um novo elemento com chave e dado
+    // Insere um novo nó com a chave e o dado especificados.
+    // Se a chave já existir, a inserção é ignorada.
     void insert(const Key& k, const Data& d) {
         rb_node<Key, Data>* current = m_root;
         rb_node<Key, Data>* m_parent = nil;
@@ -294,11 +295,11 @@ public:
         while (current != nil) {
             m_parent = current;
             num_comparisons++;
-            if (_compare(k, current->key.first)) {
+            if (m_compare(k, current->key.first)) {
                 current = current->m_left;
             } else {
                 num_comparisons++;
-                if (_compare(current->key.first, k)) {
+                if (m_compare(current->key.first, k)) {
                     current = current->m_right;
                 } else {
                     return;         // a chave já existe, não insere
@@ -311,7 +312,7 @@ public:
             m_root = new_node;
         } else {
             num_comparisons++;
-            if(_compare(k, m_parent->key.first)) {
+            if(m_compare(k, m_parent->key.first)) {
                 m_parent->m_left = new_node;
             } else {
                 m_parent->m_right = new_node;
