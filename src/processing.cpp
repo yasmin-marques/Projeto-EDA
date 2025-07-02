@@ -5,12 +5,12 @@
 #include "processing.hpp"
 
 // Inclusão das estruturas de dados e componentes necessários
-#include "../ED's/dictionary.hpp"
-#include "../ED's/avl_tree.hpp"
-#include "../ED's/rb_tree.hpp"
-#include "../ED's/chained_hash.hpp"
-#include "../ED's/open_hash.hpp"
-#include "../ED's/compare.hpp"
+#include "../EDs/dictionary.hpp"
+#include "../EDs/avl_tree.hpp"
+#include "../EDs/rb_tree.hpp"
+#include "../EDs/chained_hash.hpp"
+#include "../EDs/open_hash.hpp"
+#include "../EDs/compare.hpp"
 
 #include <cctype>
 #include <chrono>
