@@ -7,13 +7,14 @@
 #include <chrono>       // medir tempo de execução
 #include <string>
 #include <sstream>
+#include <vector>
 
 // Funções auxiliares para leitura e gravação
 #include "../src/processing.hpp"   
 // Função para normalizar palavras
 #include "compare.hpp"
 
-// Classe genérica de dicionário baseado em alguma estrutura de dados
+// Classe genérica de dicionário baseado em alguma m_dict de dados
 template <typename type>
 class dictionary {
 private:
@@ -64,6 +65,32 @@ public:
         return m_dict.search(Compare::normalize(word));
     }
 
+    // Inserção direta de chave-valor
+    void insert(const std::string& word, const int& value) {
+        m_dict.insert(Compare::normalize(word), value);
+    }
+
+    // Retorna todos os pares chave-valor
+    //std::vector<std::pair<std::string, int>> items() const {
+    //    return m_dict.all_elements();
+    //}
+
+    // Retorna o número de elementos
+    size_t size() const {
+        return m_dict.size();
+    }
+
+    // Acesso ao valor de uma chave
+    int get(const std::string& key) const {
+        return m_dict.get(key);
+    }
+
+    // Iteração por todos os pares
+    std::vector<std::pair<std::string, int>> items() const {
+        return m_dict.all_elements();
+    }
+
+
     // Calcula o comprimento de uma string UTF-8
     // Utilizado na formatação de saída
     size_t utf8_length(const std::string& s) {
@@ -89,7 +116,7 @@ public:
     // Verifica se o dicionário está vazio
     bool empty() { return m_dict.empty(); }
 
-    // Retorna o número de comparações feitas na estrutura
+    // Retorna o número de comparações feitas na m_dict
     unsigned int comparisons() { return m_dict.comparisons(); }
 
     // Salva os dados e métricas em um arquivo (usado para árvores)
@@ -105,7 +132,7 @@ public:
         result += "Palavra                  | Frequência\n";
         result += "---------------------------------------------\n";
 
-        // percorre todos os pares (chave, dado) da estrutura e formata para salvar
+        // percorre todos os pares (chave, dado) da m_dict e formata para salvar
         for (const auto& e : m_dict) {
             result += e.first;
             size_t display_len = utf8_length(e.first);
@@ -132,7 +159,7 @@ public:
         result += "Palavra                  | Frequência\n";
         result += "---------------------------------------------\n";
 
-        // percorre todos os pares (chave, dado) da estrutura e formata para salvar
+        // percorre todos os pares (chave, dado) da m_dict e formata para salvar
         for (const auto& e : m_dict) {
             result += e.first;
             result += std::string(25 - std::min<size_t>(e.first.size(), 25), ' ');

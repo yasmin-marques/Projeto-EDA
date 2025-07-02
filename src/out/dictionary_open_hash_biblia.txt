@@ -1,9 +1,11 @@
-Dicionário usando Árvore Rubro-Negra
+Dicionário usando Open Hash Table
 ---------------------------------------------
-Tempo para montar a tabela: 5093 milissegundos
+Tempo para montar a tabela: 921 milissegundos
 Tamanho do dicionário:      13035
-Número de comparações:      8042342
-Número de rotações:         8377
+Número de comparações:      11600015
+Número de colisões:         7734
+Média de acesso:            1.593326
+Acesso máximo:              11
 ---------------------------------------------
 Palavra                  | Frequência
 ---------------------------------------------
@@ -187,7 +189,7 @@ Palavra                  | Frequência
 a                        | 8282
 aaron                    | 319
 aaronites                | 2
-aaron’s                  | 31
+aaron’s                | 31
 abaddon                  | 1
 abagtha                  | 1
 abana                    | 1
@@ -221,7 +223,7 @@ abiah                    | 4
 abialbon                 | 1
 abiasaph                 | 1
 abiathar                 | 30
-abiathar’s               | 1
+abiathar’s             | 1
 abib                     | 6
 abida                    | 2
 abidan                   | 5
@@ -242,7 +244,7 @@ abilene                  | 1
 ability                  | 7
 abimael                  | 2
 abimelech                | 65
-abimelech’s              | 2
+abimelech’s            | 2
 abinadab                 | 13
 abinoam                  | 4
 abiram                   | 11
@@ -257,7 +259,7 @@ abiud                    | 2
 abjects                  | 1
 able                     | 160
 abner                    | 62
-abner’s                  | 1
+abner’s                | 1
 aboard                   | 1
 abode                    | 69
 abodest                  | 1
@@ -274,12 +276,12 @@ abounding                | 3
 about                    | 632
 above                    | 223
 abraham                  | 231
-abraham’s                | 19
+abraham’s              | 19
 abram                    | 54
-abram’s                  | 7
+abram’s                | 7
 abroad                   | 80
 absalom                  | 104
-absalom’s                | 5
+absalom’s              | 5
 absence                  | 2
 absent                   | 11
 abstain                  | 6
@@ -364,7 +366,7 @@ adam                     | 30
 adamah                   | 1
 adamant                  | 2
 adami                    | 1
-adam’s                   | 1
+adam’s                 | 1
 adar                     | 10
 adbeel                   | 2
 add                      | 33
@@ -372,7 +374,7 @@ addan                    | 1
 addar                    | 1
 added                    | 15
 adder                    | 4
-adders’                  | 1
+adders’                | 1
 addeth                   | 4
 addi                     | 1
 addicted                 | 1
@@ -502,13 +504,13 @@ agur                     | 1
 ah                       | 18
 aha                      | 10
 ahab                     | 92
-ahab’s                   | 2
+ahab’s                 | 2
 aharah                   | 1
 aharhel                  | 1
 ahasai                   | 1
 ahasbai                  | 1
 ahasuerus                | 30
-ahasuerus’               | 1
+ahasuerus’             | 1
 ahava                    | 3
 ahaz                     | 42
 ahaziah                  | 37
@@ -526,7 +528,7 @@ ahilud                   | 5
 ahimaaz                  | 15
 ahiman                   | 4
 ahimelech                | 16
-ahimelech’s              | 1
+ahimelech’s            | 1
 ahimoth                  | 1
 ahinadab                 | 1
 ahinoam                  | 7
@@ -679,7 +681,7 @@ ammonite                 | 9
 ammonites                | 23
 ammonitess               | 4
 amnon                    | 25
-amnon’s                  | 3
+amnon’s                | 3
 amok                     | 2
 amon                     | 19
 among                    | 916
@@ -693,7 +695,7 @@ amphipolis               | 1
 amplias                  | 1
 amram                    | 14
 amramites                | 2
-amram’s                  | 1
+amram’s                | 1
 amraphel                 | 2
 amzi                     | 2
 an                       | 1699
@@ -728,8 +730,8 @@ anethothite              | 1
 anetothite               | 1
 angel                    | 201
 angels                   | 93
-angels’                  | 1
-angel’s                  | 2
+angels’                | 1
+angel’s                | 2
 anger                    | 234
 angered                  | 1
 angle                    | 2
@@ -747,7 +749,7 @@ anointest                | 1
 anointing                | 28
 anon                     | 2
 another                  | 448
-another’s                | 5
+another’s              | 5
 answer                   | 131
 answerable               | 1
 answered                 | 492
@@ -789,9 +791,9 @@ apollyon                 | 1
 apostle                  | 19
 apostles                 | 55
 apostleship              | 4
-apostles’                | 5
+apostles’              | 5
 apothecaries             | 1
-apothecaries’            | 1
+apothecaries’          | 1
 apothecary               | 4
 appaim                   | 2
 apparel                  | 28
@@ -890,7 +892,7 @@ arise                    | 149
 ariseth                  | 11
 arising                  | 1
 aristarchus              | 5
-aristobulus’             | 1
+aristobulus’           | 1
 ark                      | 230
 arkite                   | 2
 arm                      | 67
@@ -924,7 +926,7 @@ arrow                    | 16
 arrows                   | 41
 art                      | 495
 artaxerxes               | 14
-artaxerxes’              | 1
+artaxerxes’            | 1
 artemas                  | 1
 artificer                | 2
 artificers               | 2
@@ -941,10 +943,10 @@ asahel                   | 18
 asahiah                  | 2
 asaiah                   | 6
 asaph                    | 45
-asaph’s                  | 1
+asaph’s                | 1
 asareel                  | 1
 asarelah                 | 1
-asa’s                    | 1
+asa’s                  | 1
 ascend                   | 13
 ascended                 | 19
 ascendeth                | 2
@@ -1029,7 +1031,7 @@ asswaged                 | 2
 assyria                  | 118
 assyrian                 | 13
 assyrians                | 10
-ass’s                    | 4
+ass’s                  | 4
 astaroth                 | 1
 astonied                 | 10
 astonished               | 34
@@ -1074,7 +1076,7 @@ attired                  | 1
 audience                 | 12
 augment                  | 1
 augustus                 | 3
-augustus’                | 1
+augustus’              | 1
 aul                      | 2
 aunt                     | 1
 austere                  | 2
@@ -1159,7 +1161,7 @@ baalshalisha             | 1
 baaltamar                | 1
 baalzebub                | 4
 baalzephon               | 3
-baal’s                   | 1
+baal’s                 | 1
 baana                    | 2
 baanah                   | 10
 baara                    | 1
@@ -1174,7 +1176,7 @@ babes                    | 9
 babylon                  | 286
 babylonians              | 4
 babylonish               | 1
-babylon’s                | 8
+babylon’s              | 8
 baca                     | 1
 bachrites                | 1
 back                     | 154
@@ -1192,7 +1194,7 @@ backward                 | 18
 bad                      | 18
 bade                     | 18
 badest                   | 1
-badgers’                 | 14
+badgers’               | 14
 badness                  | 1
 bag                      | 11
 bags                     | 3
@@ -1208,15 +1210,15 @@ bakemeats                | 1
 baken                    | 9
 baker                    | 8
 bakers                   | 2
-bakers’                  | 1
+bakers’                | 1
 baketh                   | 1
 balaam                   | 60
-balaam’s                 | 3
+balaam’s               | 3
 balac                    | 1
 baladan                  | 2
 balah                    | 1
 balak                    | 42
-balak’s                  | 1
+balak’s                | 1
 balance                  | 8
 balances                 | 10
 balancings               | 1
@@ -1243,7 +1245,7 @@ banquetings              | 1
 baptism                  | 22
 baptisms                 | 1
 baptist                  | 14
-baptist’s                | 1
+baptist’s              | 1
 baptize                  | 9
 baptized                 | 61
 baptizest                | 1
@@ -1258,7 +1260,7 @@ barbarian                | 3
 barbarians               | 2
 barbarous                | 1
 barbed                   | 1
-barber’s                 | 1
+barber’s               | 1
 bare                     | 186
 barefoot                 | 4
 barest                   | 3
@@ -1335,7 +1337,7 @@ bearing                  | 22
 bears                    | 2
 beast                    | 180
 beasts                   | 156
-beast’s                  | 1
+beast’s                | 1
 beat                     | 36
 beaten                   | 40
 beatest                  | 2
@@ -1362,7 +1364,7 @@ bedchamber               | 6
 bedeiah                  | 1
 beds                     | 10
 bedstead                 | 2
-bed’s                    | 1
+bed’s                  | 1
 bee                      | 1
 beeliada                 | 1
 beelzebub                | 7
@@ -1449,7 +1451,7 @@ belongest                | 1
 belongeth                | 20
 belonging                | 5
 beloved                  | 111
-beloved’s                | 2
+beloved’s              | 2
 belshazzar               | 8
 belteshazzar             | 10
 bemoan                   | 5
@@ -1474,7 +1476,7 @@ benhail                  | 1
 benhanan                 | 1
 beninu                   | 1
 benjamin                 | 162
-benjamin’s               | 4
+benjamin’s             | 4
 benjamite                | 9
 benjamites               | 8
 beno                     | 2
@@ -1637,8 +1639,8 @@ binea                    | 2
 binnui                   | 7
 bird                     | 28
 birds                    | 24
-birds’                   | 1
-bird’s                   | 1
+birds’                 | 1
+bird’s                 | 1
 birsha                   | 1
 birth                    | 15
 birthday                 | 3
@@ -1743,7 +1745,7 @@ bochim                   | 2
 bodies                   | 33
 bodily                   | 4
 body                     | 174
-body’s                   | 1
+body’s                 | 1
 bohan                    | 2
 boil                     | 16
 boiled                   | 3
@@ -1867,7 +1869,7 @@ breeches                 | 5
 breed                    | 2
 breeding                 | 1
 brethren                 | 563
-brethren’s               | 1
+brethren’s             | 1
 bribe                    | 2
 bribery                  | 1
 bribes                   | 3
@@ -1877,7 +1879,7 @@ bricks                   | 4
 bride                    | 14
 bridechamber             | 3
 bridegroom               | 23
-bridegroom’s             | 1
+bridegroom’s           | 1
 bridle                   | 9
 bridles                  | 1
 bridleth                 | 1
@@ -1912,8 +1914,8 @@ broth                    | 3
 brother                  | 367
 brotherhood              | 2
 brotherly                | 6
-brothers’                | 1
-brother’s                | 35
+brothers’              | 1
+brother’s              | 35
 brought                  | 863
 broughtest               | 13
 brow                     | 2
@@ -1950,7 +1952,7 @@ bul                      | 1
 bull                     | 2
 bullock                  | 104
 bullocks                 | 45
-bullock’s                | 3
+bullock’s              | 3
 bulls                    | 10
 bulrush                  | 1
 bulrushes                | 2
@@ -2011,7 +2013,7 @@ cabins                   | 1
 cabul                    | 2
 caesar                   | 21
 caesarea                 | 17
-caesar’s                 | 9
+caesar’s               | 9
 cage                     | 2
 caiaphas                 | 9
 cain                     | 20
@@ -2027,9 +2029,9 @@ caldron                  | 6
 caldrons                 | 3
 caleb                    | 32
 calebephratah            | 1
-caleb’s                  | 4
+caleb’s                | 4
 calf                     | 29
-calf’s                   | 1
+calf’s                 | 1
 calkers                  | 2
 call                     | 196
 called                   | 624
@@ -2049,8 +2051,8 @@ cambridge                | 1
 came                     | 2096
 camel                    | 9
 camels                   | 47
-camels’                  | 3
-camel’s                  | 3
+camels’                | 3
+camel’s                | 3
 camest                   | 28
 camon                    | 1
 camp                     | 136
@@ -2115,7 +2117,7 @@ carnal                   | 11
 carnally                 | 4
 carpenter                | 3
 carpenters               | 9
-carpenter’s              | 1
+carpenter’s            | 1
 carpus                   | 1
 carriage                 | 3
 carriages                | 3
@@ -2162,7 +2164,7 @@ causeway                 | 2
 causing                  | 4
 cave                     | 33
 caves                    | 6
-cave’s                   | 1
+cave’s                 | 1
 cease                    | 70
 ceased                   | 33
 ceaseth                  | 10
@@ -2178,7 +2180,7 @@ censer                   | 12
 censers                  | 8
 centurion                | 20
 centurions               | 3
-centurion’s              | 1
+centurion’s            | 1
 cephas                   | 6
 ceremonies               | 1
 certain                  | 196
@@ -2196,9 +2198,9 @@ chaldaeans               | 1
 chaldea                  | 7
 chaldean                 | 2
 chaldeans                | 65
-chaldeans’               | 1
+chaldeans’             | 1
 chaldees                 | 13
-chaldees’                | 1
+chaldees’              | 1
 chalkstones              | 1
 challengeth              | 1
 chamber                  | 52
@@ -2218,7 +2220,7 @@ change                   | 26
 changeable               | 1
 changed                  | 43
 changers                 | 1
-changers’                | 1
+changers’              | 1
 changes                  | 7
 changest                 | 1
 changeth                 | 2
@@ -2298,7 +2300,7 @@ cherisheth               | 2
 cherith                  | 2
 cherub                   | 30
 cherubims                | 64
-cherubims’               | 1
+cherubims’             | 1
 chesalon                 | 1
 chesed                   | 1
 chesil                   | 1
@@ -2324,11 +2326,11 @@ childhood                | 2
 childish                 | 1
 childless                | 7
 children                 | 1803
-children’s               | 19
-child’s                  | 4
+children’s             | 19
+child’s                | 4
 chileab                  | 1
 chilion                  | 2
-chilion’s                | 1
+chilion’s              | 1
 chilmad                  | 1
 chimham                  | 4
 chimney                  | 1
@@ -2361,7 +2363,7 @@ christ                   | 555
 christian                | 2
 christians               | 1
 christs                  | 2
-christ’s                 | 16
+christ’s               | 16
 chronicles               | 1802
 chrysolite               | 1
 chrysoprasus             | 1
@@ -2468,7 +2470,7 @@ coats                    | 14
 cock                     | 12
 cockatrice               | 1
 cockatrices              | 1
-cockatrice’              | 2
+cockatrice’            | 2
 cockcrowing              | 1
 cockle                   | 1
 coffer                   | 3
@@ -2549,7 +2551,7 @@ companied                | 1
 companies                | 17
 companion                | 13
 companions               | 21
-companions’              | 1
+companions’            | 1
 company                  | 86
 comparable               | 1
 compare                  | 4
@@ -2856,7 +2858,7 @@ coveteth                 | 2
 covetous                 | 9
 covetousness             | 19
 cow                      | 6
-cow’s                    | 1
+cow’s                  | 1
 coz                      | 1
 cozbi                    | 2
 crackling                | 1
@@ -2989,7 +2991,7 @@ dabbasheth               | 1
 daberath                 | 2
 dagger                   | 3
 dagon                    | 12
-dagon’s                  | 1
+dagon’s                | 1
 daily                    | 63
 dainties                 | 3
 dainty                   | 3
@@ -3009,7 +3011,7 @@ damnation                | 11
 damned                   | 3
 damsel                   | 40
 damsels                  | 3
-damsel’s                 | 8
+damsel’s               | 8
 dan                      | 72
 dance                    | 8
 danced                   | 6
@@ -3046,18 +3048,18 @@ daubed                   | 7
 daubing                  | 1
 daughter                 | 324
 daughters                | 254
-daughter’s               | 3
+daughter’s             | 3
 david                    | 1085
-david’s                  | 54
+david’s                | 54
 dawn                     | 2
 dawning                  | 5
 day                      | 1732
 days                     | 855
 daysman                  | 1
 dayspring                | 2
-days’                    | 13
+days’                  | 13
 daytime                  | 7
-day’s                    | 9
+day’s                  | 9
 deacon                   | 2
 deacons                  | 3
 dead                     | 364
@@ -3347,7 +3349,7 @@ dimness                  | 2
 dimon                    | 2
 dimonah                  | 1
 dinah                    | 7
-dinah’s                  | 1
+dinah’s                | 1
 dinaites                 | 1
 dine                     | 3
 dined                    | 1
@@ -3382,7 +3384,7 @@ discharge                | 1
 discharged               | 1
 disciple                 | 29
 disciples                | 243
-disciples’               | 1
+disciples’             | 1
 discipline               | 1
 disclose                 | 1
 discomfited              | 9
@@ -3511,7 +3513,7 @@ doest                    | 45
 doeth                    | 96
 dog                      | 15
 dogs                     | 24
-dog’s                    | 2
+dog’s                  | 2
 doing                    | 39
 doings                   | 51
 doleful                  | 2
@@ -3544,8 +3546,8 @@ doubts                   | 2
 dough                    | 8
 dove                     | 18
 doves                    | 10
-doves’                   | 2
-dove’s                   | 1
+doves’                 | 2
+dove’s                 | 1
 down                     | 1125
 downsitting              | 1
 downward                 | 5
@@ -3651,8 +3653,8 @@ dying                    | 6
 each                     | 51
 eagle                    | 23
 eagles                   | 7
-eagles’                  | 2
-eagle’s                  | 2
+eagles’                | 2
+eagle’s                | 2
 ear                      | 120
 eared                    | 1
 earing                   | 2
@@ -3722,7 +3724,7 @@ eglon                    | 13
 egypt                    | 611
 egyptian                 | 23
 egyptians                | 98
-egyptian’s               | 4
+egyptian’s             | 4
 ehi                      | 1
 ehud                     | 10
 eight                    | 80
@@ -3754,7 +3756,7 @@ eleazar                  | 74
 elect                    | 17
 elected                  | 1
 election                 | 6
-elect’s                  | 3
+elect’s                | 3
 eleloheisrael            | 1
 elements                 | 4
 eleph                    | 1
@@ -3763,7 +3765,7 @@ eleventh                 | 20
 elhanan                  | 4
 eli                      | 34
 eliab                    | 20
-eliab’s                  | 1
+eliab’s                | 1
 eliada                   | 3
 eliadah                  | 1
 eliah                    | 2
@@ -3785,7 +3787,7 @@ elijah                   | 69
 elika                    | 1
 elim                     | 6
 elimelech                | 4
-elimelech’s              | 2
+elimelech’s            | 2
 elioenai                 | 8
 eliphal                  | 1
 eliphalet                | 2
@@ -3793,7 +3795,7 @@ eliphaz                  | 15
 elipheleh                | 2
 eliphelet                | 6
 elisabeth                | 8
-elisabeth’s              | 1
+elisabeth’s            | 1
 eliseus                  | 1
 elisha                   | 58
 elishah                  | 3
@@ -3804,7 +3806,7 @@ elishua                  | 2
 eliud                    | 2
 elizaphan                | 4
 elizur                   | 5
-eli’s                    | 1
+eli’s                  | 1
 elkanah                  | 21
 elkoshite                | 1
 ellasar                  | 2
@@ -3893,9 +3895,9 @@ endureth                 | 59
 enduring                 | 3
 eneglaim                 | 1
 enemies                  | 267
-enemies’                 | 3
+enemies’               | 3
 enemy                    | 107
-enemy’s                  | 3
+enemy’s                | 3
 enflaming                | 1
 engaged                  | 1
 engannim                 | 3
@@ -3987,7 +3989,7 @@ ephphatha                | 1
 ephraim                  | 172
 ephraimite               | 1
 ephraimites              | 5
-ephraim’s                | 4
+ephraim’s              | 4
 ephrain                  | 1
 ephratah                 | 5
 ephrath                  | 5
@@ -4020,7 +4022,7 @@ errors                   | 4
 esaias                   | 21
 esarhaddon               | 3
 esau                     | 88
-esau’s                   | 12
+esau’s                 | 12
 escape                   | 59
 escaped                  | 58
 escapeth                 | 6
@@ -4058,7 +4060,7 @@ esteemed                 | 11
 esteemeth                | 4
 esteeming                | 1
 esther                   | 220
-esther’s                 | 3
+esther’s               | 3
 estimate                 | 2
 estimation               | 23
 estimations              | 1
@@ -4206,7 +4208,7 @@ eyesalve                 | 1
 eyeservice               | 2
 eyesight                 | 1
 eyewitnesses             | 2
-eye’s                    | 1
+eye’s                  | 1
 ezbai                    | 1
 ezbon                    | 2
 ezekias                  | 2
@@ -4295,8 +4297,8 @@ fatfleshed               | 2
 father                   | 979
 fatherless               | 43
 fathers                  | 538
-fathers’                 | 11
-father’s                 | 147
+fathers’               | 11
+father’s               | 147
 fathoms                  | 2
 fatling                  | 1
 fatlings                 | 5
@@ -4347,7 +4349,7 @@ feigned                  | 3
 feignedly                | 1
 feignest                 | 2
 felix                    | 8
-felix’                   | 1
+felix’                 | 1
 fell                     | 243
 felled                   | 1
 feller                   | 1
@@ -4370,7 +4372,7 @@ fellowservants           | 4
 fellowship               | 17
 fellowsoldier            | 2
 fellowworkers            | 1
-fellow’s                 | 1
+fellow’s               | 1
 felt                     | 5
 female                   | 24
 fence                    | 1
@@ -4381,7 +4383,7 @@ ferry                    | 1
 fervent                  | 7
 fervently                | 2
 festus                   | 12
-festus’                  | 1
+festus’                | 1
 fetch                    | 31
 fetched                  | 18
 fetcheth                 | 1
@@ -4461,12 +4463,12 @@ firstripe                | 4
 fish                     | 35
 fishermen                | 1
 fishers                  | 7
-fisher’s                 | 1
+fisher’s               | 1
 fishes                   | 27
 fishhooks                | 1
 fishing                  | 1
 fishpools                | 1
-fish’s                   | 1
+fish’s                 | 1
 fist                     | 2
 fists                    | 1
 fit                      | 9
@@ -4563,7 +4565,7 @@ foolish                  | 52
 foolishly                | 12
 foolishness              | 20
 fools                    | 42
-fool’s                   | 7
+fool’s                 | 7
 foot                     | 95
 footmen                  | 12
 footsteps                | 4
@@ -4663,7 +4665,7 @@ fortresses               | 2
 forts                    | 6
 fortunatus               | 1
 forty                    | 157
-forty’s                  | 1
+forty’s                | 1
 forum                    | 1
 forward                  | 47
 forwardness              | 2
@@ -4749,8 +4751,8 @@ fulfilled                | 82
 fulfilling               | 3
 full                     | 260
 fuller                   | 1
-fullers’                 | 1
-fuller’s                 | 3
+fullers’               | 1
+fuller’s               | 3
 fully                    | 13
 fulness                  | 25
 furbish                  | 1
@@ -4941,7 +4943,7 @@ gilboa                   | 8
 gilead                   | 100
 gileadite                | 9
 gileadites               | 4
-gilead’s                 | 1
+gilead’s               | 1
 gilgal                   | 41
 giloh                    | 2
 gilonite                 | 2
@@ -5018,7 +5020,7 @@ goat                     | 35
 goath                    | 1
 goats                    | 87
 goatskins                | 1
-goats’                   | 10
+goats’                 | 10
 gob                      | 2
 goblet                   | 1
 god                      | 4444
@@ -5028,7 +5030,7 @@ godhead                  | 3
 godliness                | 15
 godly                    | 15
 gods                     | 244
-god’s                    | 26
+god’s                  | 26
 goest                    | 46
 goeth                    | 135
 gog                      | 11
@@ -5039,7 +5041,7 @@ gold                     | 417
 golden                   | 66
 goldsmith                | 3
 goldsmiths               | 2
-goldsmith’s              | 1
+goldsmith’s            | 1
 golgotha                 | 3
 goliath                  | 6
 gomer                    | 6
@@ -5053,7 +5055,7 @@ goodliness               | 1
 goodly                   | 33
 goodman                  | 6
 goodness                 | 50
-goodness’                | 1
+goodness’              | 1
 goods                    | 42
 gopher                   | 1
 gore                     | 1
@@ -5062,7 +5064,7 @@ gorgeous                 | 1
 gorgeously               | 2
 goshen                   | 15
 gospel                   | 101
-gospel’s                 | 3
+gospel’s               | 3
 got                      | 7
 gotten                   | 25
 gourd                    | 5
@@ -5072,7 +5074,7 @@ government               | 4
 governments              | 1
 governor                 | 59
 governors                | 22
-governor’s               | 1
+governor’s             | 1
 gozan                    | 5
 grace                    | 170
 gracious                 | 31
@@ -5099,7 +5101,7 @@ gravel                   | 3
 graven                   | 55
 graves                   | 21
 graveth                  | 1
-grave’s                  | 1
+grave’s                | 1
 graving                  | 3
 gravings                 | 1
 gravity                  | 2
@@ -5163,7 +5165,7 @@ grudge                   | 3
 grudging                 | 1
 grudgingly               | 1
 guard                    | 50
-guard’s                  | 1
+guard’s                | 1
 gudgodah                 | 2
 guest                    | 1
 guestchamber             | 2
@@ -5256,7 +5258,7 @@ halteth                  | 2
 halting                  | 1
 ham                      | 17
 haman                    | 50
-haman’s                  | 3
+haman’s                | 3
 hamath                   | 34
 hamathite                | 2
 hamathzobah              | 1
@@ -5271,7 +5273,7 @@ hammothdor               | 1
 hamonah                  | 1
 hamongog                 | 2
 hamor                    | 12
-hamor’s                  | 1
+hamor’s                | 1
 hamuel                   | 1
 hamul                    | 3
 hamulites                | 1
@@ -5345,8 +5347,8 @@ harim                    | 11
 hariph                   | 2
 harlot                   | 40
 harlots                  | 7
-harlots’                 | 1
-harlot’s                 | 2
+harlots’               | 1
+harlot’s               | 2
 harm                     | 16
 harmless                 | 3
 harnepher                | 1
@@ -5488,9 +5490,9 @@ hearted                  | 8
 hearth                   | 7
 heartily                 | 1
 hearts                   | 112
-hearts’                  | 1
+hearts’                | 1
 hearty                   | 1
-heart’s                  | 3
+heart’s                | 3
 heat                     | 32
 heated                   | 2
 heath                    | 2
@@ -5500,18 +5502,18 @@ heaved                   | 3
 heaven                   | 582
 heavenly                 | 23
 heavens                  | 133
-heaven’s                 | 1
+heaven’s               | 1
 heavier                  | 3
 heavily                  | 3
 heaviness                | 14
 heavy                    | 40
 heber                    | 13
 heberites                | 1
-heber’s                  | 1
+heber’s                | 1
 hebrew                   | 26
 hebrewess                | 1
 hebrews                  | 323
-hebrews’                 | 1
+hebrews’               | 1
 hebron                   | 73
 hebronites               | 6
 hedge                    | 9
@@ -5523,7 +5525,7 @@ heels                    | 4
 hegai                    | 3
 hege                     | 1
 heifer                   | 19
-heifer’s                 | 1
+heifer’s               | 1
 height                   | 62
 heights                  | 2
 heinous                  | 1
@@ -5607,9 +5609,9 @@ hermonites               | 1
 herod                    | 40
 herodians                | 3
 herodias                 | 4
-herodias’                | 2
+herodias’              | 2
 herodion                 | 1
-herod’s                  | 4
+herod’s                | 4
 heron                    | 2
 hers                     | 4
 herself                  | 42
@@ -5632,7 +5634,7 @@ hezrai                   | 1
 hezro                    | 1
 hezron                   | 17
 hezronites               | 2
-hezron’s                 | 1
+hezron’s               | 1
 hid                      | 129
 hiddai                   | 1
 hiddekel                 | 2
@@ -5654,11 +5656,11 @@ highway                  | 16
 highways                 | 10
 hilen                    | 1
 hilkiah                  | 33
-hilkiah’s                | 1
+hilkiah’s              | 1
 hill                     | 76
 hillel                   | 2
 hills                    | 65
-hill’s                   | 1
+hill’s                 | 1
 him                      | 6667
 himself                  | 528
 hin                      | 22
@@ -5669,13 +5671,13 @@ hindereth                | 1
 hindermost               | 2
 hindmost                 | 3
 hinds                    | 4
-hinds’                   | 3
+hinds’                 | 3
 hinges                   | 2
 hinnom                   | 13
 hip                      | 1
 hirah                    | 2
 hiram                    | 22
-hiram’s                  | 1
+hiram’s                | 1
 hire                     | 23
 hired                    | 34
 hireling                 | 9
@@ -5717,7 +5719,7 @@ holding                  | 9
 holds                    | 21
 hole                     | 12
 holes                    | 11
-hole’s                   | 1
+hole’s                 | 1
 holier                   | 1
 holiest                  | 3
 holily                   | 1
@@ -5751,7 +5753,7 @@ hooks                    | 18
 hope                     | 129
 hoped                    | 11
 hopeth                   | 1
-hope’s                   | 1
+hope’s                 | 1
 hophni                   | 5
 hoping                   | 2
 hor                      | 12
@@ -5780,7 +5782,7 @@ horseleach               | 1
 horseman                 | 2
 horsemen                 | 59
 horses                   | 109
-horses’                  | 2
+horses’                | 2
 hosah                    | 5
 hosanna                  | 6
 hosea                    | 200
@@ -5865,7 +5867,7 @@ husbandman               | 7
 husbandmen               | 21
 husbandry                | 2
 husbands                 | 19
-husband’s                | 6
+husband’s              | 6
 hushah                   | 1
 hushai                   | 14
 husham                   | 4
@@ -5882,7 +5884,7 @@ hypocrisies              | 1
 hypocrisy                | 6
 hypocrite                | 10
 hypocrites               | 20
-hypocrite’s              | 1
+hypocrite’s            | 1
 hypocritical             | 2
 hyssop                   | 12
 i                        | 8853
@@ -5894,7 +5896,7 @@ ibri                     | 1
 ibzan                    | 2
 ice                      | 3
 ichabod                  | 1
-ichabod’s                | 1
+ichabod’s              | 1
 iconium                  | 6
 idalah                   | 1
 idbash                   | 1
@@ -5908,7 +5910,7 @@ idolatries               | 1
 idolatrous               | 1
 idolatry                 | 5
 idols                    | 101
-idol’s                   | 1
+idol’s                 | 1
 idumaea                  | 1
 idumea                   | 4
 if                       | 1595
@@ -5930,7 +5932,7 @@ illyricum                | 1
 image                    | 100
 imagery                  | 1
 images                   | 71
-image’s                  | 1
+image’s                | 1
 imagination              | 14
 imaginations             | 6
 imagine                  | 12
@@ -6121,7 +6123,7 @@ irshemesh                | 1
 iru                      | 1
 is                       | 6991
 isaac                    | 128
-isaac’s                  | 4
+isaac’s                | 4
 isaiah                   | 1324
 iscah                    | 1
 iscariot                 | 11
@@ -6136,7 +6138,7 @@ ishma                    | 1
 ishmael                  | 47
 ishmaelite               | 1
 ishmaelites              | 2
-ishmael’s                | 1
+ishmael’s              | 1
 ishmaiah                 | 1
 ishmeelite               | 1
 ishmeelites              | 4
@@ -6158,7 +6160,7 @@ israel                   | 2565
 israelite                | 4
 israelites               | 18
 israelitish              | 3
-israel’s                 | 10
+israel’s               | 10
 issachar                 | 44
 isshiah                  | 3
 issue                    | 40
@@ -6214,7 +6216,7 @@ jabesh                   | 12
 jabeshgilead             | 12
 jabez                    | 4
 jabin                    | 7
-jabin’s                  | 1
+jabin’s                | 1
 jabneel                  | 2
 jabneh                   | 1
 jachan                   | 1
@@ -6222,7 +6224,7 @@ jachin                   | 8
 jachinites               | 1
 jacinth                  | 2
 jacob                    | 358
-jacob’s                  | 19
+jacob’s                | 19
 jada                     | 2
 jadau                    | 1
 jaddua                   | 3
@@ -6333,7 +6335,7 @@ jehoahaz                 | 23
 jehoash                  | 17
 jehohanan                | 6
 jehoiachin               | 10
-jehoiachin’s             | 1
+jehoiachin’s           | 1
 jehoiada                 | 52
 jehoiakim                | 37
 jehoiarib                | 2
@@ -6375,7 +6377,7 @@ jerahmeelites            | 2
 jered                    | 2
 jeremai                  | 1
 jeremiah                 | 1510
-jeremiah’s               | 1
+jeremiah’s             | 1
 jeremias                 | 1
 jeremoth                 | 5
 jeremy                   | 2
@@ -6387,13 +6389,13 @@ jerijah                  | 1
 jerimoth                 | 8
 jerioth                  | 1
 jeroboam                 | 102
-jeroboam’s               | 2
+jeroboam’s             | 2
 jeroham                  | 10
 jerubbaal                | 14
 jerubbesheth             | 1
 jeruel                   | 1
 jerusalem                | 811
-jerusalem’s              | 3
+jerusalem’s            | 3
 jerusha                  | 1
 jerushah                 | 1
 jesaiah                  | 2
@@ -6415,7 +6417,7 @@ jesui                    | 1
 jesuites                 | 1
 jesurun                  | 1
 jesus                    | 973
-jesus’                   | 10
+jesus’                 | 10
 jether                   | 8
 jetheth                  | 2
 jethlah                  | 1
@@ -6431,10 +6433,10 @@ jewess                   | 2
 jewish                   | 1
 jewry                    | 3
 jews                     | 243
-jews’                    | 14
+jews’                  | 14
 jezaniah                 | 2
 jezebel                  | 22
-jezebel’s                | 1
+jezebel’s              | 1
 jezer                    | 3
 jezerites                | 1
 jeziah                   | 1
@@ -6453,7 +6455,7 @@ jimnites                 | 1
 jiphtah                  | 1
 jiphthahel               | 2
 joab                     | 138
-joab’s                   | 8
+joab’s                 | 8
 joah                     | 11
 joahaz                   | 1
 joanna                   | 3
@@ -6461,7 +6463,7 @@ joash                    | 49
 joatham                  | 2
 job                      | 1129
 jobab                    | 9
-job’s                    | 1
+job’s                  | 1
 jochebed                 | 2
 jod                      | 1
 joed                     | 1
@@ -6473,7 +6475,7 @@ jogli                    | 1
 joha                     | 2
 johanan                  | 27
 john                     | 1142
-john’s                   | 2
+john’s                 | 2
 joiada                   | 4
 joiakim                  | 4
 joiarib                  | 5
@@ -6497,7 +6499,7 @@ jonah                    | 67
 jonan                    | 1
 jonas                    | 12
 jonathan                 | 118
-jonathan’s               | 3
+jonathan’s             | 3
 jonathelemrechokim       | 1
 joppa                    | 13
 jorah                    | 1
@@ -6511,7 +6513,7 @@ josaphat                 | 2
 jose                     | 1
 josedech                 | 6
 joseph                   | 228
-joseph’s                 | 22
+joseph’s               | 22
 joses                    | 6
 joshah                   | 1
 joshaphat                | 1
@@ -6548,7 +6550,7 @@ jucal                    | 1
 juda                     | 10
 judaea                   | 43
 judah                    | 813
-judah’s                  | 4
+judah’s                | 4
 judas                    | 33
 jude                     | 26
 judea                    | 1
@@ -6662,12 +6664,12 @@ kingdom                  | 342
 kingdoms                 | 57
 kingly                   | 1
 kings                    | 1864
-kings’                   | 5
-king’s                   | 284
+kings’                 | 5
+king’s                 | 284
 kinsfolk                 | 2
 kinsfolks                | 3
 kinsman                  | 16
-kinsman’s                | 1
+kinsman’s              | 1
 kinsmen                  | 7
 kinswoman                | 3
 kinswomen                | 1
@@ -6740,7 +6742,7 @@ kushaiah                 | 1
 laadah                   | 1
 laadan                   | 7
 laban                    | 51
-laban’s                  | 4
+laban’s                | 4
 labour                   | 89
 laboured                 | 19
 labourer                 | 2
@@ -6765,7 +6767,7 @@ ladies                   | 2
 lading                   | 2
 lads                     | 1
 lady                     | 4
-lad’s                    | 1
+lad’s                  | 1
 lael                     | 1
 lahad                    | 1
 lahairoi                 | 2
@@ -6780,7 +6782,7 @@ lakum                    | 1
 lama                     | 2
 lamb                     | 105
 lambs                    | 81
-lamb’s                   | 2
+lamb’s                 | 2
 lame                     | 27
 lamech                   | 12
 lamed                    | 1
@@ -6862,7 +6864,7 @@ leadeth                  | 14
 leaf                     | 11
 league                   | 19
 leah                     | 29
-leah’s                   | 5
+leah’s                 | 5
 lean                     | 11
 leaned                   | 6
 leaneth                  | 2
@@ -7028,8 +7030,8 @@ lioness                  | 1
 lionesses                | 1
 lionlike                 | 2
 lions                    | 43
-lions’                   | 3
-lion’s                   | 6
+lions’                 | 3
+lion’s                 | 6
 lip                      | 3
 lips                     | 119
 liquor                   | 2
@@ -7103,7 +7105,7 @@ lord                     | 7836
 lordly                   | 1
 lords                    | 42
 lordship                 | 2
-lord’s                   | 134
+lord’s                 | 134
 loruhamah                | 2
 lose                     | 24
 loseth                   | 1
@@ -7111,13 +7113,13 @@ loss                     | 10
 lost                     | 33
 lot                      | 111
 lotan                    | 5
-lotan’s                  | 2
+lotan’s                | 2
 lothe                    | 4
 lothed                   | 3
 lotheth                  | 1
 lothing                  | 1
 lots                     | 24
-lot’s                    | 2
+lot’s                  | 2
 loud                     | 60
 louder                   | 2
 love                     | 310
@@ -7129,7 +7131,7 @@ lovers                   | 23
 loves                    | 3
 lovest                   | 12
 loveth                   | 65
-love’s                   | 1
+love’s                 | 1
 loving                   | 3
 lovingkindness           | 26
 lovingkindnesses         | 4
@@ -7147,7 +7149,7 @@ lucas                    | 1
 lucifer                  | 1
 lucius                   | 2
 lucre                    | 5
-lucre’s                  | 1
+lucre’s                | 1
 lud                      | 4
 ludim                    | 2
 luhith                   | 2
@@ -7237,7 +7239,7 @@ mahlah                   | 4
 mahli                    | 11
 mahlites                 | 2
 mahlon                   | 3
-mahlon’s                 | 1
+mahlon’s               | 1
 mahol                    | 1
 maid                     | 36
 maiden                   | 8
@@ -7245,9 +7247,9 @@ maidens                  | 18
 maids                    | 9
 maidservant              | 16
 maidservants             | 9
-maidservants’            | 1
-maidservant’s            | 1
-maid’s                   | 1
+maidservants’          | 1
+maidservant’s          | 1
+maid’s                 | 1
 mail                     | 2
 maimed                   | 7
 mainsail                 | 1
@@ -7294,7 +7296,7 @@ manaen                   | 1
 manahath                 | 3
 manahethites             | 2
 manasseh                 | 143
-manasseh’s               | 4
+manasseh’s             | 4
 manasses                 | 3
 manassites               | 3
 mandrakes                | 6
@@ -7312,14 +7314,14 @@ manners                  | 6
 manoah                   | 18
 manservant               | 12
 manservants              | 1
-manservant’s             | 1
+manservant’s           | 1
 mansions                 | 1
 manslayer                | 2
 manslayers               | 1
 mantle                   | 13
 mantles                  | 1
 many                     | 556
-man’s                    | 122
+man’s                  | 122
 maoch                    | 1
 maon                     | 7
 maonites                 | 1
@@ -7355,7 +7357,7 @@ marrow                   | 5
 marry                    | 22
 marrying                 | 2
 marsena                  | 1
-mars’                    | 1
+mars’                  | 1
 mart                     | 1
 martha                   | 13
 martyr                   | 2
@@ -7378,9 +7380,9 @@ master                   | 157
 masterbuilder            | 1
 masteries                | 1
 masters                  | 20
-masters’                 | 2
+masters’               | 2
 mastery                  | 3
-master’s                 | 24
+master’s               | 24
 masts                    | 1
 mate                     | 2
 mathusala                | 1
@@ -7500,7 +7502,7 @@ menstealers              | 1
 menstruous               | 3
 mention                  | 23
 mentioned                | 7
-men’s                    | 24
+men’s                  | 24
 meonenim                 | 1
 meonothai                | 1
 mephaath                 | 4
@@ -7515,9 +7517,9 @@ merchandise              | 22
 merchant                 | 12
 merchantmen              | 2
 merchants                | 28
-merchants’               | 1
+merchants’             | 1
 mercies                  | 40
-mercies’                 | 4
+mercies’               | 4
 merciful                 | 40
 mercurius                | 1
 mercy                    | 276
@@ -7570,7 +7572,7 @@ mibhar                   | 1
 mibsam                   | 3
 mibzar                   | 2
 micah                    | 132
-micah’s                  | 3
+micah’s                | 3
 micaiah                  | 18
 mice                     | 4
 micha                    | 4
@@ -7738,7 +7740,7 @@ moon                     | 51
 moons                    | 11
 morasthite               | 2
 mordecai                 | 58
-mordecai’s               | 2
+mordecai’s             | 2
 more                     | 686
 moreh                    | 3
 moreover                 | 171
@@ -7758,15 +7760,15 @@ mortify                  | 2
 mosera                   | 1
 moseroth                 | 2
 moses                    | 829
-moses’                   | 19
+moses’                 | 19
 most                     | 135
 mote                     | 6
 moth                     | 10
 motheaten                | 1
 mother                   | 245
 mothers                  | 7
-mothers’                 | 1
-mother’s                 | 75
+mothers’               | 1
+mother’s               | 75
 motions                  | 1
 mouldy                   | 2
 mount                    | 263
@@ -7802,7 +7804,7 @@ mufflers                 | 1
 mulberry                 | 4
 mule                     | 9
 mules                    | 11
-mules’                   | 1
+mules’                 | 1
 multiplied               | 44
 multipliedst             | 1
 multiplieth              | 3
@@ -7852,7 +7854,7 @@ mystery                  | 22
 naam                     | 1
 naamah                   | 5
 naaman                   | 16
-naaman’s                 | 1
+naaman’s               | 1
 naamathite               | 4
 naamites                 | 1
 naarah                   | 3
@@ -7862,9 +7864,9 @@ naarath                  | 1
 naashon                  | 1
 naasson                  | 3
 nabal                    | 18
-nabal’s                  | 4
+nabal’s                | 4
 naboth                   | 22
-nachon’s                 | 1
+nachon’s               | 1
 nachor                   | 2
 nadab                    | 20
 nagge                    | 1
@@ -7879,7 +7881,7 @@ nahash                   | 9
 nahath                   | 5
 nahbi                    | 1
 nahor                    | 15
-nahor’s                  | 2
+nahor’s                | 2
 nahshon                  | 9
 nahum                    | 48
 nail                     | 8
@@ -7894,9 +7896,9 @@ named                    | 57
 namely                   | 23
 names                    | 97
 nameth                   | 1
-name’s                   | 30
+name’s                 | 30
 naomi                    | 20
-naomi’s                  | 1
+naomi’s                | 1
 naphish                  | 2
 naphtali                 | 50
 naphtuhim                | 2
@@ -7959,7 +7961,7 @@ needeth                  | 6
 needful                  | 6
 needle                   | 2
 needlework               | 9
-needle’s                 | 1
+needle’s               | 1
 needs                    | 16
 needy                    | 38
 neesings                 | 1
@@ -7978,8 +7980,8 @@ nehushtan                | 1
 neiel                    | 1
 neighbour                | 107
 neighbours               | 21
-neighbours’              | 1
-neighbour’s              | 28
+neighbours’            | 1
+neighbour’s            | 28
 neighed                  | 1
 neighing                 | 1
 neighings                | 1
@@ -8058,7 +8060,7 @@ nitre                    | 2
 no                       | 1393
 noadiah                  | 2
 noah                     | 51
-noah’s                   | 2
+noah’s                 | 2
 nob                      | 6
 nobah                    | 3
 noble                    | 7
@@ -8121,7 +8123,7 @@ oar                      | 1
 oars                     | 2
 oath                     | 59
 oaths                    | 3
-oath’s                   | 2
+oath’s                 | 2
 obadiah                  | 41
 obal                     | 1
 obed                     | 13
@@ -8223,7 +8225,7 @@ one                      | 1967
 ones                     | 77
 onesimus                 | 2
 onesiphorus              | 2
-one’s                    | 2
+one’s                  | 2
 onions                   | 1
 only                     | 253
 ono                      | 5
@@ -8515,7 +8517,7 @@ patterns                 | 1
 pau                      | 1
 paul                     | 156
 paulus                   | 1
-paul’s                   | 6
+paul’s                 | 6
 paved                    | 2
 pavement                 | 9
 pavilion                 | 4
@@ -8567,9 +8569,9 @@ penuel                   | 8
 penury                   | 2
 people                   | 2139
 peoples                  | 2
-people’s                 | 4
+people’s               | 4
 peor                     | 4
-peor’s                   | 1
+peor’s                 | 1
 peradventure             | 32
 perazim                  | 1
 perceive                 | 25
@@ -8657,7 +8659,7 @@ pestilences              | 2
 pestilent                | 1
 pestle                   | 1
 peter                    | 324
-peter’s                  | 4
+peter’s                | 4
 pethahiah                | 4
 pethor                   | 2
 pethuel                  | 1
@@ -8673,13 +8675,13 @@ pharaoh                  | 225
 pharaohhophra            | 1
 pharaohnecho             | 1
 pharaohnechoh            | 4
-pharaoh’s                | 48
+pharaoh’s              | 48
 phares                   | 3
 pharez                   | 12
 pharisee                 | 11
 pharisees                | 86
-pharisees’               | 1
-pharisee’s               | 2
+pharisees’             | 1
+pharisee’s             | 2
 pharosh                  | 1
 pharpar                  | 1
 pharzites                | 1
@@ -8694,17 +8696,17 @@ philetus                 | 1
 philip                   | 33
 philippi                 | 6
 philippians              | 105
-philip’s                 | 3
+philip’s               | 3
 philistia                | 3
 philistim                | 1
 philistine               | 33
 philistines              | 251
-philistines’             | 4
+philistines’           | 4
 philologus               | 1
 philosophers             | 1
 philosophy               | 1
 phinehas                 | 24
-phinehas’                | 1
+phinehas’              | 1
 phlegon                  | 1
 phrygia                  | 3
 phurah                   | 2
@@ -8917,8 +8919,8 @@ potsherds                | 1
 pottage                  | 7
 potter                   | 10
 potters                  | 1
-potters’                 | 2
-potter’s                 | 9
+potters’               | 2
+potter’s               | 9
 pound                    | 10
 pounds                   | 5
 pour                     | 63
@@ -9019,13 +9021,13 @@ pride                    | 49
 priest                   | 497
 priesthood               | 16
 priests                  | 392
-priests’                 | 9
-priest’s                 | 46
+priests’               | 9
+priest’s               | 46
 prince                   | 102
 princes                  | 273
 princess                 | 1
 princesses               | 1
-prince’s                 | 3
+prince’s               | 3
 principal                | 17
 principalities           | 7
 principality             | 2
@@ -9103,7 +9105,7 @@ prophesyings             | 1
 prophet                  | 242
 prophetess               | 8
 prophets                 | 239
-prophet’s                | 2
+prophet’s              | 2
 propitiation             | 3
 proportion               | 3
 proselyte                | 2
@@ -9281,7 +9283,7 @@ race                     | 4
 rachab                   | 1
 rachal                   | 1
 rachel                   | 42
-rachel’s                 | 5
+rachel’s               | 5
 raddai                   | 1
 rafters                  | 1
 ragau                    | 1
@@ -9328,8 +9330,8 @@ ramoth                   | 8
 ramothgilead             | 19
 rampart                  | 2
 rams                     | 68
-rams’                    | 9
-ram’s                    | 1
+rams’                  | 9
+ram’s                  | 1
 ran                      | 61
 rang                     | 2
 range                    | 1
@@ -9387,7 +9389,7 @@ reasons                  | 2
 reba                     | 2
 rebecca                  | 1
 rebekah                  | 28
-rebekah’s                | 2
+rebekah’s              | 2
 rebel                    | 14
 rebelled                 | 34
 rebellest                | 2
@@ -9452,7 +9454,7 @@ reelaiah                 | 1
 refine                   | 1
 refined                  | 5
 refiner                  | 1
-refiner’s                | 1
+refiner’s              | 1
 reformation              | 1
 reformed                 | 1
 refrain                  | 9
@@ -9518,7 +9520,7 @@ remainest                | 2
 remaineth                | 37
 remaining                | 14
 remaliah                 | 11
-remaliah’s               | 2
+remaliah’s             | 2
 remedy                   | 3
 remember                 | 148
 remembered               | 57
@@ -9737,7 +9739,7 @@ righteous                | 238
 righteously              | 8
 righteousness            | 302
 righteousnesses          | 3
-righteousness’           | 4
+righteousness’         | 4
 rightly                  | 4
 rigour                   | 5
 rimmon                   | 14
@@ -9766,7 +9768,7 @@ rites                    | 1
 rithmah                  | 2
 river                    | 175
 rivers                   | 77
-river’s                  | 4
+river’s                | 4
 rizpah                   | 4
 road                     | 1
 roar                     | 23
@@ -9850,7 +9852,7 @@ rule                     | 66
 ruled                    | 13
 ruler                    | 84
 rulers                   | 78
-ruler’s                  | 2
+ruler’s                | 2
 rulest                   | 2
 ruleth                   | 14
 ruling                   | 3
@@ -9884,8 +9886,8 @@ sackbut                  | 4
 sackcloth                | 46
 sackclothes              | 1
 sacks                    | 9
-sacks’                   | 1
-sack’s                   | 3
+sacks’                 | 1
+sack’s                 | 3
 sacrifice                | 218
 sacrificed               | 33
 sacrificedst             | 1
@@ -9913,7 +9915,7 @@ sailing                  | 3
 sailors                  | 1
 saint                    | 5
 saints                   | 95
-saints’                  | 1
+saints’                | 1
 saith                    | 1262
 sake                     | 145
 sakes                    | 31
@@ -9953,7 +9955,7 @@ samlah                   | 4
 samos                    | 1
 samothracia              | 1
 samson                   | 36
-samson’s                 | 3
+samson’s               | 3
 samuel                   | 1647
 sanballat                | 10
 sanctification           | 5
@@ -9975,11 +9977,11 @@ sapphire                 | 9
 sapphires                | 3
 sara                     | 3
 sarah                    | 37
-sarah’s                  | 2
+sarah’s                | 2
 sarai                    | 16
-sarai’s                  | 1
+sarai’s                | 1
 saraph                   | 1
-sara’s                   | 1
+sara’s                 | 1
 sardine                  | 1
 sardis                   | 3
 sardites                 | 1
@@ -9993,7 +9995,7 @@ sarsechim                | 1
 saruch                   | 1
 sat                      | 192
 satan                    | 55
-satan’s                  | 1
+satan’s                | 1
 satest                   | 2
 satiate                  | 2
 satiated                 | 1
@@ -10006,7 +10008,7 @@ satisfying               | 2
 satyr                    | 1
 satyrs                   | 1
 saul                     | 394
-saul’s                   | 31
+saul’s                 | 31
 save                     | 233
 saved                    | 104
 savest                   | 3
@@ -10082,7 +10084,7 @@ scraped                  | 2
 screech                  | 1
 scribe                   | 52
 scribes                  | 68
-scribe’s                 | 2
+scribe’s               | 2
 scrip                    | 7
 scripture                | 32
 scriptures               | 21
@@ -10139,7 +10141,7 @@ see                      | 597
 seed                     | 279
 seeds                    | 5
 seedtime                 | 1
-seed’s                   | 1
+seed’s                 | 1
 seeing                   | 116
 seek                     | 244
 seekest                  | 9
@@ -10152,7 +10154,7 @@ seemly                   | 2
 seen                     | 277
 seer                     | 21
 seers                    | 6
-seer’s                   | 1
+seer’s                 | 1
 seest                    | 36
 seeth                    | 54
 seethe                   | 9
@@ -10219,12 +10221,12 @@ sergius                  | 1
 serjeants                | 2
 serpent                  | 38
 serpents                 | 13
-serpent’s                | 2
+serpent’s              | 2
 serug                    | 5
 servant                  | 491
 servants                 | 476
-servants’                | 4
-servant’s                | 9
+servants’              | 4
+servant’s              | 9
 serve                    | 209
 served                   | 74
 servedst                 | 1
@@ -10372,7 +10374,7 @@ shecaniah                | 2
 shechaniah               | 8
 shechem                  | 62
 shechemites              | 1
-shechem’s                | 2
+shechem’s              | 2
 shed                     | 52
 shedder                  | 1
 sheddeth                 | 2
@@ -10386,7 +10388,7 @@ sheepfolds               | 3
 sheepmaster              | 1
 sheepshearers            | 3
 sheepskins               | 1
-sheep’s                  | 1
+sheep’s                | 1
 sheet                    | 2
 sheets                   | 2
 shehariah                | 1
@@ -10422,8 +10424,8 @@ shephathiah              | 1
 shephatiah               | 12
 shepherd                 | 43
 shepherds                | 37
-shepherds’               | 1
-shepherd’s               | 2
+shepherds’             | 1
+shepherd’s             | 2
 shephi                   | 1
 shepho                   | 1
 shephuphan               | 1
@@ -10527,7 +10529,7 @@ shod                     | 4
 shoe                     | 9
 shoelatchet              | 1
 shoes                    | 21
-shoe’s                   | 1
+shoe’s                 | 1
 shoham                   | 1
 shomer                   | 2
 shone                    | 7
@@ -10652,7 +10654,7 @@ simeonites               | 3
 similitude               | 11
 similitudes              | 1
 simon                    | 69
-simon’s                  | 7
+simon’s                | 7
 simple                   | 20
 simplicity               | 5
 simri                    | 1
@@ -10685,7 +10687,7 @@ sinnest                  | 1
 sinneth                  | 22
 sinning                  | 2
 sins                     | 172
-sin—                     | 1
+sin—                   | 1
 sion                     | 9
 siphmoth                 | 1
 sippai                   | 1
@@ -10697,7 +10699,7 @@ sisamai                  | 2
 sisera                   | 21
 sister                   | 109
 sisters                  | 19
-sister’s                 | 7
+sister’s               | 7
 sit                      | 113
 sith                     | 1
 sitnah                   | 1
@@ -10855,7 +10857,7 @@ solace                   | 1
 sold                     | 82
 soldier                  | 5
 soldiers                 | 29
-soldiers’                | 1
+soldiers’              | 1
 sole                     | 12
 solemn                   | 29
 solemnities              | 3
@@ -10865,7 +10867,7 @@ soles                    | 7
 solitarily               | 1
 solitary                 | 7
 solomon                  | 398
-solomon’s                | 25
+solomon’s              | 25
 some                     | 232
 somebody                 | 2
 something                | 8
@@ -10876,8 +10878,8 @@ son                      | 2371
 song                     | 195
 songs                    | 20
 sons                     | 1079
-sons’                    | 26
-son’s                    | 22
+sons’                  | 26
+son’s                  | 22
 soon                     | 65
 sooner                   | 2
 soothsayer               | 1
@@ -10912,7 +10914,7 @@ sottish                  | 1
 sought                   | 126
 soul                     | 458
 souls                    | 78
-soul’s                   | 1
+soul’s                 | 1
 sound                    | 89
 sounded                  | 18
 soundeth                 | 1
@@ -10956,7 +10958,7 @@ speakings                | 1
 spear                    | 45
 spearmen                 | 2
 spears                   | 16
-spear’s                  | 1
+spear’s                | 1
 special                  | 2
 specially                | 6
 speckled                 | 11
@@ -10978,7 +10980,7 @@ spiced                   | 1
 spicery                  | 1
 spices                   | 31
 spider                   | 1
-spider’s                 | 2
+spider’s               | 2
 spied                    | 6
 spies                    | 14
 spikenard                | 5
@@ -11140,13 +11142,13 @@ stoicks                  | 1
 stole                    | 6
 stolen                   | 15
 stomacher                | 1
-stomach’s                | 1
+stomach’s              | 1
 stone                    | 191
 stoned                   | 22
 stones                   | 178
 stonesquarers            | 1
 stonest                  | 2
-stone’s                  | 1
+stone’s                | 1
 stoning                  | 1
 stony                    | 7
 stood                    | 339
@@ -11188,8 +11190,8 @@ strange                  | 76
 strangely                | 1
 stranger                 | 129
 strangers                | 79
-strangers’               | 1
-stranger’s               | 2
+strangers’             | 1
+stranger’s             | 2
 strangled                | 4
 strangling               | 1
 straw                    | 16
@@ -11398,7 +11400,7 @@ swim                     | 6
 swimmest                 | 1
 swimmeth                 | 1
 swine                    | 16
-swine’s                  | 4
+swine’s                | 4
 swollen                  | 1
 swoon                    | 1
 swooned                  | 1
@@ -11413,7 +11415,7 @@ sycomores                | 1
 syene                    | 2
 synagogue                | 43
 synagogues               | 24
-synagogue’s              | 2
+synagogue’s            | 2
 syntyche                 | 1
 syracuse                 | 1
 syria                    | 75
@@ -11593,7 +11595,7 @@ tent                     | 98
 tenth                    | 81
 tentmakers               | 1
 tents                    | 66
-ten’s                    | 1
+ten’s                  | 1
 terah                    | 11
 teraphim                 | 6
 teresh                   | 2
@@ -11689,7 +11691,7 @@ thin                     | 9
 thine                    | 937
 thing                    | 549
 things                   | 1161
-things’                  | 1
+things’                | 1
 think                    | 65
 thinkest                 | 9
 thinketh                 | 6
@@ -11865,7 +11867,7 @@ took                     | 752
 tookest                  | 2
 tool                     | 4
 tooth                    | 11
-tooth’s                  | 1
+tooth’s                | 1
 top                      | 91
 topaz                    | 5
 tophel                   | 1
@@ -12024,7 +12026,7 @@ trusteth                 | 17
 trusting                 | 1
 trusty                   | 1
 truth                    | 235
-truth’s                  | 2
+truth’s                | 2
 try                      | 17
 trying                   | 1
 tryphena                 | 1
@@ -12050,7 +12052,7 @@ twelfth                  | 23
 twelve                   | 189
 twentieth                | 36
 twenty                   | 293
-twenty’s                 | 1
+twenty’s               | 1
 twice                    | 17
 twigs                    | 2
 twilight                 | 9
@@ -12088,7 +12090,7 @@ uncle                    | 10
 unclean                  | 194
 uncleanness              | 40
 uncleannesses            | 1
-uncle’s                  | 7
+uncle’s                | 7
 unclothed                | 1
 uncomely                 | 2
 uncondemned              | 2
@@ -12210,7 +12212,7 @@ urged                    | 6
 urgent                   | 2
 uri                      | 8
 uriah                    | 27
-uriah’s                  | 1
+uriah’s                | 1
 urias                    | 1
 uriel                    | 4
 urijah                   | 11
@@ -12334,11 +12336,11 @@ violently                | 10
 viols                    | 2
 viper                    | 3
 vipers                   | 4
-viper’s                  | 1
+viper’s                | 1
 virgin                   | 33
 virginity                | 9
 virgins                  | 22
-virgin’s                 | 1
+virgin’s               | 1
 virtue                   | 7
 virtuous                 | 3
 virtuously               | 1
@@ -12372,7 +12374,7 @@ vows                     | 30
 voyage                   | 1
 vulture                  | 2
 vultures                 | 1
-vulture’s                | 1
+vulture’s              | 1
 wafer                    | 3
 wafers                   | 5
 wag                      | 3
@@ -12465,7 +12467,7 @@ watchful                 | 1
 watching                 | 6
 watchings                | 2
 watchman                 | 18
-watchman’s               | 1
+watchman’s             | 1
 watchmen                 | 12
 watchtower               | 2
 water                    | 396
@@ -12520,7 +12522,7 @@ weasel                   | 1
 weather                  | 4
 weave                    | 2
 weaver                   | 2
-weaver’s                 | 5
+weaver’s               | 5
 weavest                  | 1
 web                      | 4
 webs                     | 1
@@ -12549,7 +12551,7 @@ wellfavoured             | 1
 wellpleasing             | 2
 wells                    | 11
 wellspring               | 2
-well’s                   | 6
+well’s                 | 6
 wen                      | 1
 wench                    | 1
 went                     | 1400
@@ -12563,7 +12565,7 @@ westward                 | 26
 wet                      | 6
 whale                    | 2
 whales                   | 1
-whale’s                  | 1
+whale’s                | 1
 what                     | 985
 whatsoever               | 152
 wheat                    | 51
@@ -12625,7 +12627,7 @@ whoredoms                | 32
 whoremonger              | 1
 whoremongers             | 4
 whores                   | 2
-whore’s                  | 1
+whore’s                | 1
 whoring                  | 19
 whorish                  | 3
 whose                    | 314
@@ -12640,10 +12642,10 @@ wideness                 | 1
 widow                    | 50
 widowhood                | 4
 widows                   | 23
-widows’                  | 3
-widow’s                  | 5
+widows’                | 3
+widow’s                | 5
 wife                     | 396
-wife’s                   | 11
+wife’s                 | 11
 wild                     | 44
 wilderness               | 305
 wiles                    | 2
@@ -12725,11 +12727,11 @@ witnessed                | 4
 witnesses                | 49
 witnesseth               | 2
 witnessing               | 1
-wits’                    | 1
+wits’                  | 1
 wittingly                | 1
 witty                    | 1
 wives                    | 132
-wives’                   | 1
+wives’                 | 1
 wizard                   | 2
 wizards                  | 9
 woe                      | 106
@@ -12739,12 +12741,12 @@ wolf                     | 6
 wolves                   | 7
 woman                    | 360
 womankind                | 1
-woman’s                  | 7
+woman’s                | 7
 womb                     | 71
 wombs                    | 2
 women                    | 178
 womenservants            | 3
-women’s                  | 1
+women’s                | 1
 won                      | 3
 wonder                   | 15
 wondered                 | 15
@@ -12762,7 +12764,7 @@ wool                     | 14
 woollen                  | 6
 word                     | 697
 words                    | 548
-word’s                   | 2
+word’s                 | 2
 work                     | 419
 worker                   | 1
 workers                  | 27
@@ -12772,14 +12774,14 @@ working                  | 20
 workman                  | 10
 workmanship              | 7
 workmen                  | 11
-workmen’s                | 1
+workmen’s              | 1
 works                    | 236
-works’                   | 1
-work’s                   | 1
+works’                 | 1
+work’s                 | 1
 world                    | 287
 worldly                  | 2
 worlds                   | 2
-world’s                  | 1
+world’s                | 1
 worm                     | 14
 worms                    | 8
 wormwood                 | 9
@@ -12829,7 +12831,7 @@ wrinkle                  | 1
 wrinkles                 | 1
 write                    | 91
 writer                   | 2
-writer’s                 | 2
+writer’s               | 2
 writest                  | 2
 writeth                  | 1
 writing                  | 38
@@ -12853,8 +12855,8 @@ yearly                   | 9
 yearn                    | 1
 yearned                  | 1
 years                    | 537
-years’                   | 2
-year’s                   | 2
+years’                 | 2
+year’s                 | 2
 yell                     | 1
 yelled                   | 1
 yellow                   | 4
@@ -12901,7 +12903,7 @@ zachariah                | 4
 zacharias                | 11
 zacher                   | 1
 zadok                    | 52
-zadok’s                  | 1
+zadok’s                | 1
 zaham                    | 1
 zain                     | 1
 zair                     | 1
@@ -12935,7 +12937,7 @@ zebadiah                 | 9
 zebah                    | 12
 zebaim                   | 2
 zebedee                  | 10
-zebedee’s                | 2
+zebedee’s              | 2
 zebina                   | 1
 zeboiim                  | 2
 zeboim                   | 5
@@ -12947,7 +12949,7 @@ zebulunites              | 1
 zechariah                | 250
 zedad                    | 2
 zedekiah                 | 61
-zedekiah’s               | 1
+zedekiah’s             | 1
 zeeb                     | 6
 zelah                    | 2
 zelek                    | 2
@@ -13005,7 +13007,7 @@ zimri                    | 15
 zin                      | 10
 zina                     | 1
 zion                     | 152
-zion’s                   | 1
+zion’s                 | 1
 zior                     | 1
 ziph                     | 10
 ziphah                   | 1

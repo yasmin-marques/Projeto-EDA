@@ -257,6 +257,16 @@ private:
         p->m_parent = u->m_parent;
     }
 
+    // Função auxiliar recursiva para percorrer a árvore em ordem e preencher um vetor com os pares
+    void in_order(rb_node<Key, Data>* node, std::vector<std::pair<Key, Data>>& result) const {
+        if (!node) return;
+        in_order(node->m_left, result);
+        if (!node->key.first.empty()) { 
+            result.emplace_back(node->key.first, node->key.second);
+        }
+        in_order(node->m_right, result);
+    }
+
 public:
     // Construtor
     red_black_tree()
@@ -356,6 +366,13 @@ public:
     // Retorna o nome da estrutura (usado no relatório/saída)
     std::string name() const {
         return "Árvore Rubro-Negra";
+    }
+
+    // Retorna todos os elementos da árvore como um vetor de pares, em ordem crescente das chaves
+    std::vector<std::pair<Key, Data>> all_elements() const {
+        std::vector<std::pair<Key, Data>> result;
+        in_order(m_root, result);
+        return result;
     }
 
     // Classe iterator para percorrer a árvore (in-order)

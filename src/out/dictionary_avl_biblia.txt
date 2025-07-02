@@ -1,9 +1,9 @@
-Dicionário usando Árvore Rubro-Negra
+Dicionário usando Árvore AVL
 ---------------------------------------------
-Tempo para montar a tabela: 5093 milissegundos
+Tempo para montar a tabela: 18830 milissegundos
 Tamanho do dicionário:      13035
-Número de comparações:      8042342
-Número de rotações:         8377
+Número de comparações:      34535213
+Número de rotações:         9976
 ---------------------------------------------
 Palavra                  | Frequência
 ---------------------------------------------

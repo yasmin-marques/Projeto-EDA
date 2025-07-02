@@ -23,7 +23,6 @@ private:
         entry_state state{EMPTY};   // estado da célula
     };
 
-
     std::vector<entry> m_table;    // vetor com todas as células
     size_t m_number_of_elements;   // total de elementos na tabela
     size_t m_table_size;           // tamanho atual da tabela
@@ -34,13 +33,11 @@ private:
 
     std::vector<std::pair<Key, Data>> m_sorted_pairs;   // vetor ordenado (para iterador)
     bool m_needs_update;                                // marca se precisa reordenar os pares
-    mutable size_t  num_comparisons;                       // número de comparações realizadas
-    mutable size_t  num_collisions;                        // número de colisões realizadas
+    mutable size_t  num_comparisons;                    // número de comparações realizadas
+    mutable size_t  num_collisions;                     // número de colisões realizadas
     int total_probes = 0;                               // número de sondagens realizadas (colisões tratadas)
     int insertion_count = 0;                            // número de inserções feitas na tabela
     int max_probe = 0;                                  // maior número de sondagens ocorridas em uma única inserção
-
-
 
     // Retorna o próximo número primo maior que x
     size_t get_next_prime(size_t x) {
@@ -284,6 +281,18 @@ public:
 
     // Retorna o nome da estrutura (usado no relatório/saída)
     std::string name() const { return "Open Hash Table"; }
+
+    // Retorna um vetor contendo todos os pares atualmente ativos na tabela hash
+    // Apenas entradas com estado ACTIVE são consideradas
+    std::vector<std::pair<Key, Data>> all_elements() const {
+        std::vector<std::pair<Key, Data>> result;
+        for (const auto& e : m_table) {
+            if (e.state == ACTIVE) {
+                result.emplace_back(e.key, e.data);
+            }
+        }
+        return result;
+    }
 
     // Classe iterator para percorrer a hash table em ordem linear de índice
     class iterator {

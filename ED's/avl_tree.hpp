@@ -6,6 +6,7 @@
 #include <algorithm>    // std::max
 #include <stdexcept>
 #include <string>
+#include <vector>
 
 // Estrutura que representa um nó da árvore AVL
 template <typename Key, typename Data>
@@ -182,6 +183,16 @@ private:
         return _fixup_avl_node(p, k);   // rebalanceia a árvore
     }
 
+    // Função auxiliar recursiva para percorrer a árvore em ordem e preencher um vetor com os pares
+    void in_order(avl_node<Key, Data>* node, std::vector<std::pair<Key, Data>>& result) const {
+        if (!node) return;
+        in_order(node->m_left, result);
+        if (!node->key.first.empty()) { 
+            result.emplace_back(node->key.first, node->key.second);
+        }
+        in_order(node->m_right, result);
+    }
+
 public:
     // Construtor da árvore AVL
     avl_tree() : m_compare(Compare()) {}
@@ -227,6 +238,13 @@ public:
         avl_node<Key, Data>* n = _search(m_root, k);
         if (!n) throw std::out_of_range("Key not found");
         n->key.second = d;
+    }
+
+    // Retorna todos os elementos da árvore como um vetor de pares, em ordem crescente das chaves
+    std::vector<std::pair<Key, Data>> all_elements() const {
+        std::vector<std::pair<Key, Data>> result;
+        in_order(m_root, result);
+        return result;
     }
 
     // Retorna o nome da estrutura (usado no relatório/saída)

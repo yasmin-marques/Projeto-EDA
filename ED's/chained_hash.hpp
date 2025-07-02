@@ -268,6 +268,17 @@ public:
     // Retorna o nome da estrutura (usado no relatório/saída)
     std::string name() const { return "Chained Hash Table"; }
 
+    // Retorna um vetor contendo todos os pares armazenados na tabela hash
+    std::vector<std::pair<Key, Data>> all_elements() const {
+        std::vector<std::pair<Key, Data>> result;
+        for (const auto& bucket : (*m_table)) {
+            for (const auto& pair : bucket) {
+                result.push_back(pair);
+            }
+        }
+        return result;
+    }
+
     // Classe iterator para percorrer a hash table em ordem linear de índice
     class iterator {
     private:
