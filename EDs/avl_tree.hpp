@@ -29,7 +29,7 @@ private:
     unsigned int m_size = 0;                    // número de elementos na árvore
     Compare m_compare;                          // objeto de comparação
     unsigned int num_comparisons = 0;           // número de comparação realizadas
-    unsigned int num_rotation = 0;              // número de rotações realizadas
+    unsigned int num_rotations = 0;              // número de rotações realizadas
 
     // Libera todos os nós da árvore
     void _clear(avl_node<Key, Data>* p) {
@@ -51,7 +51,7 @@ private:
 
     // Rotação simples para a direita
     avl_node<Key, Data>* _right_rotation(avl_node<Key, Data>* p) {
-        num_rotation++;
+        num_rotations++;
         avl_node<Key, Data>* u = p->m_left;
         p->m_left = u->m_right;
         u->m_right = p;
@@ -64,7 +64,7 @@ private:
 
     // Rotação simples para a esquerda
     avl_node<Key, Data>* _left_rotation(avl_node<Key, Data>* p) {
-        num_rotation++;
+        num_rotations++;
         avl_node<Key, Data>* u = p->m_right;
         p->m_right = u->m_left;
         u->m_left = p;
@@ -219,7 +219,7 @@ public:
     unsigned int comparisons() const { return num_comparisons; }
 
     // Retorna a quantidade de rotações feitas
-    unsigned int rotations() const { return num_rotation; }
+    unsigned int rotations() const { return num_rotations; }
 
     // Busca e retorna referência para o dado associado à chave
     Data& search(Key k) {

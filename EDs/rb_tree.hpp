@@ -34,7 +34,7 @@ private:
     unsigned int m_size = 0;            // quantidade de elementos
     Compare m_compare;                   // objeto de comparação
     unsigned int num_comparisons = 0;   // número de comparações feitas
-    unsigned int num_rotation = 0;      // número de rotações feitas
+    unsigned int num_rotations = 0;      // número de rotações feitas
 
     // Libera memória de todos os nós recursivamente
     void _clear(rb_node<Key, Data>* p) {
@@ -47,7 +47,7 @@ private:
 
     // Rotação simples para a esquerda
     void _left_rotate(rb_node<Key, Data>* p) {
-        num_rotation++;
+        num_rotations++;
         rb_node<Key, Data>* u = p->m_right;
         p->m_right = u->m_left;
         num_comparisons++;
@@ -69,7 +69,7 @@ private:
 
     // Rotação simples para a direita
     void _right_rotate(rb_node<Key, Data>* p) {
-        num_rotation++;
+        num_rotations++;
         rb_node<Key, Data>* u = p->m_left;
         num_comparisons++;
         p->m_left = u->m_right;
@@ -291,7 +291,7 @@ public:
     unsigned int size() const { return m_size; }
 
     // Retorna o número de rotações realizadas
-    unsigned int rotations() const { return num_rotation; }
+    unsigned int rotations() const { return num_rotations; }
 
     // Retorna o número de comparações realizadas
     unsigned int comparisons() const { return num_comparisons; }
