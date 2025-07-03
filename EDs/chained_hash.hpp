@@ -73,7 +73,7 @@ public:
       m_table_size(get_next_prime(table_size)),
       m_table(new std::vector<std::list<std::pair<Key, Data>>>(m_table_size)),
       m_load_factor(0),
-      m_max_load_factor(0.75),
+      m_max_load_factor(0.5),
       m_hashing(hf),
       m_compare(Compare()),
       m_needs_update(true),

@@ -162,7 +162,7 @@ public:
         }
 
         size_t first_deleted = m_table_size;    // marca slot reutilizável
-        int probes = 0;                         // Contador de sondagens nesta inserção
+        int probes = 0;                         // contador de sondagens nesta inserção
 
         for (size_t i = 0; i < m_table_size; ++i) {
             size_t slot = hash_code(key, i);
@@ -183,7 +183,7 @@ public:
                 m_number_of_elements++;
                 m_needs_update = true;
 
-                // Métricas adicionadas:
+                // métricas adicionadas atualizadas
                 total_probes += probes;
                 insertion_count++;
                 max_probe = std::max(max_probe, probes); // atualiza pior caso
@@ -198,7 +198,7 @@ public:
             m_number_of_elements++;
             m_needs_update = true;
 
-            // Métricas adicionadas:
+            // Métricas adicionadas atualizadas
             total_probes += probes;
             insertion_count++;
             max_probe = std::max(max_probe, probes); // atualiza pior caso
@@ -206,7 +206,7 @@ public:
             return true;
         }
 
-        return false; // inserção falhou (tabela cheia sem espaço DELETED)
+        return false; // inserção falhou
     }
 
 

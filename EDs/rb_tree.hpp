@@ -258,13 +258,13 @@ private:
     }
 
     // Função auxiliar recursiva para percorrer a árvore em ordem e preencher um vetor com os pares
-    void in_order(rb_node<Key, Data>* node, std::vector<std::pair<Key, Data>>& result) const {
+    void _in_order(rb_node<Key, Data>* node, std::vector<std::pair<Key, Data>>& result) const {
         if (!node) return;
-        in_order(node->m_left, result);
+        _in_order(node->m_left, result);
         if (!node->key.first.empty()) { 
             result.emplace_back(node->key.first, node->key.second);
         }
-        in_order(node->m_right, result);
+        _in_order(node->m_right, result);
     }
 
 public:
@@ -330,7 +330,7 @@ public:
         }
 
         m_size++; 
-        _insert_fixup(new_node);    // Corrige a estrutura e cores se necessário
+        _insert_fixup(new_node);    // corrige a estrutura e cores se necessário
     }
 
     // Remove uma chave da árvore
@@ -371,7 +371,7 @@ public:
     // Retorna todos os elementos da árvore como um vetor de pares, em ordem crescente das chaves
     std::vector<std::pair<Key, Data>> all_elements() const {
         std::vector<std::pair<Key, Data>> result;
-        in_order(m_root, result);
+        _in_order(m_root, result);
         return result;
     }
 
