@@ -162,7 +162,8 @@ public:
         // percorre todos os pares (chave, dado) da m_dict e formata para salvar
         for (const auto& e : m_dict) {
             result += e.first;
-            result += std::string(25 - std::min<size_t>(e.first.size(), 25), ' ');
+            size_t display_len = utf8_length(e.first);
+            result += std::string(25 - std::min(display_len, size_t(25)), ' ');
             result += "| ";
             result += std::to_string(e.second);
             result += '\n';
