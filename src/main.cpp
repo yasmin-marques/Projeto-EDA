@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 // Inclusão das estruturas de dados e componentes necessários
 #include "../EDs/avl_tree.hpp"
@@ -91,17 +92,20 @@ void modo_interativo(Dictionary& dict) {
     while (true) {
         std::cout << "\n> ";
         std::getline(std::cin, command);
+        std::istringstream iss(command);
+        std::string main_cmd;
+        iss >> main_cmd;                   // extrai apenas a primeira palavra
 
-        if (command == "exit") break;
+        if (main_cmd == "exit") break;
 
         // Limpa ou reinicia o dicionário
-        else if (command == "create" || command == "clear") {
+        else if (main_cmd == "create" || main_cmd == "clear") {
             dict.clear();
             std::cout << "[OK] Dictionary cleared.\n";
         }
 
         // Insere um novo par chave-valor
-        else if (command == "insert") {
+        else if (main_cmd == "insert") {
             std::string key;
             int value;
             std::cout << "Enter key: ";
@@ -115,7 +119,7 @@ void modo_interativo(Dictionary& dict) {
         }
 
         // Atualiza valor de uma chave existente
-        else if (command == "update") {
+        else if (main_cmd == "update") {
             std::string key;
             int value;
             std::cout << "Enter key: ";
@@ -132,7 +136,7 @@ void modo_interativo(Dictionary& dict) {
         }
 
         // Remove uma chave do dicionário
-        else if (command == "remove") {
+        else if (main_cmd == "remove") {
             std::string key;
             std::cout << "Enter key to remove: ";
             std::getline(std::cin, key);
@@ -145,7 +149,7 @@ void modo_interativo(Dictionary& dict) {
         }
 
         // Acessa o valor de uma chave
-        else if (command == "get") {
+        else if (main_cmd == "get") {
             std::string key;
             std::cout << "Enter key: ";
             std::getline(std::cin, key);
@@ -157,7 +161,7 @@ void modo_interativo(Dictionary& dict) {
         }
 
         // Verifica se uma chave está presente
-        else if (command == "contains") {
+        else if (main_cmd == "contains") {
             std::string key;
             std::cout << "Enter key: ";
             std::getline(std::cin, key);
@@ -165,7 +169,7 @@ void modo_interativo(Dictionary& dict) {
         }
 
         // Lista todos os elementos (ordenados)
-        else if (command == "iterate") {
+        else if (main_cmd == "iterate") {
             auto elements = dict.items();
             std::sort(elements.begin(), elements.end());
             if (elements.empty()) {
@@ -179,7 +183,7 @@ void modo_interativo(Dictionary& dict) {
         }
 
         // Exibe o tamanho atual
-        else if (command == "size") {
+        else if (main_cmd == "size") {
             std::cout << "Size: " << dict.size() << "\n";
         }
 
