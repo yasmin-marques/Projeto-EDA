@@ -83,7 +83,7 @@ private:
             return new avl_node<Key, Data>(k, d);   // insere novo nó
         }
 
-        // decide para qual lado inserir
+        // compara a chave com o nó atual para decidir entre subárvore esquerda ou direita
         num_comparisons++;
         if (m_compare(k, p->key.first)) {
             p->m_left = _insert(p->m_left, k, d);
@@ -132,7 +132,7 @@ private:
         num_comparisons++; 
         if(p == nullptr) return nullptr;    // chave não encontrada
 
-        // se for igual, retorna o nó
+        // se a chave for igual à do nó atual, retorna o ponteiro para esse nó
         num_comparisons += 2;
         if(!m_compare(k, p->key.first) && !m_compare(p->key.first, k)) return p;
 
@@ -248,17 +248,15 @@ public:
     }
 
     // Retorna o nome da estrutura (usado no relatório/saída)
-    std::string name() const {
-        return "Árvore AVL";
-    }
+    std::string name() const { return "Árvore AVL"; }
 
-    // Classe interna que permite percorrer a árvore em ordem alfabética
+    // Classe interna que permite percorrer a árvore em ordem crescente das chaves
     class iterator {
     private:
         std::stack<avl_node<Key, Data>*> _stack;    // pilha para simular travessia
         avl_node<Key, Data>* _current;              // nó atual da iteração
 
-        // Empilha todos os nós à esquerda
+        // Empilha todos os nós à esquerda a partir de um nó, para iniciar travessia in-order
         void _push_left(avl_node<Key, Data>* n) {
             while(n) { 
                 _stack.push(n); 

@@ -41,11 +41,17 @@ public:
         std::istringstream iss(text);           // cria uma stream a partir do texto
         std::string word;
         while(iss >> word) {                    // extrai palavra por palavra
+            if (word == "-") continue;          // ignora hífen isolado
             insert(word);                       // insere cada palavra no dicionário
         }
     }
 
-    // Remove uma palavra dicionário
+    // Inserção direta de chave-valor, usada no modo interativo
+    void insert(const std::string& word, const int& value) {
+        m_dict.insert(Compare::normalize(word), value);
+    }
+
+    // Remove uma palavra do dicionário
     void remove(const std::string& word) {
         m_dict.remove(Compare::normalize(word));
     }
@@ -64,32 +70,11 @@ public:
     int search(const std::string& word) {
         return m_dict.search(Compare::normalize(word));
     }
-
-    // Inserção direta de chave-valor
-    void insert(const std::string& word, const int& value) {
-        m_dict.insert(Compare::normalize(word), value);
-    }
-
-    // Retorna todos os pares chave-valor
-    //std::vector<std::pair<std::string, int>> items() const {
-    //    return m_dict.all_elements();
-    //}
-
-    // Retorna o número de elementos
-    size_t size() const {
-        return m_dict.size();
-    }
-
-    // Acesso ao valor de uma chave
-    int get(const std::string& key) const {
-        return m_dict.get(key);
-    }
-
+    
     // Iteração por todos os pares
     std::vector<std::pair<std::string, int>> items() const {
         return m_dict.all_elements();
     }
-
 
     // Calcula o comprimento de uma string UTF-8
     // Utilizado na formatação de saída
@@ -118,6 +103,9 @@ public:
 
     // Retorna o número de comparações feitas na m_dict
     unsigned int comparisons() { return m_dict.comparisons(); }
+
+    // Retorna o nome da estrutura 
+    std::string name() const { return m_dict.name(); }
 
     // Salva os dados e métricas em um arquivo (usado para árvores)
     void save_for_tree(const std::string& filename, std::chrono::milliseconds duration) {

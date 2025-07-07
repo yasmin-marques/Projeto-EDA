@@ -364,9 +364,7 @@ public:
     }
 
     // Retorna o nome da estrutura (usado no relatório/saída)
-    std::string name() const {
-        return "Árvore Rubro-Negra";
-    }
+    std::string name() const { return "Árvore Rubro-Negra"; }
 
     // Retorna todos os elementos da árvore como um vetor de pares, em ordem crescente das chaves
     std::vector<std::pair<Key, Data>> all_elements() const {

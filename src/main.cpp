@@ -45,6 +45,7 @@ std::string clean_word(const std::string& input) {
             result += input[i + 3];
             i += 4;
         } else {
+            // caractere invalido, substitui por espaço
             result += ' ';
             ++i;
         }
@@ -110,7 +111,7 @@ void modo_interativo(Dictionary& dict) {
             int value;
             std::cout << "Enter key: ";
             std::getline(std::cin, key);
-            key = clean_word(key);          // limpa caracteres especiais
+            key = clean_word(key);          // normaliza a palavra removendo caracteres especiais e acentuados
             std::cout << "Enter value: ";
             std::cin >> value;
             std::cin.ignore();
@@ -168,7 +169,7 @@ void modo_interativo(Dictionary& dict) {
             std::cout << (dict.contains(key) ? "[YES] Exists.\n" : "[NO] Does not exist.\n");
         }
 
-        // Lista todos os elementos (ordenados)
+        // Lista todos os elementos, ordena os elementos por chave antes de exibir
         else if (main_cmd == "iterate") {
             auto elements = dict.items();
             std::sort(elements.begin(), elements.end());
@@ -206,6 +207,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Salva a estrutura de dados e o nome do arquivo
+    // parâmetros passados na linha de comando
     string ED = argv[1];
     string filename = argv[2];
 

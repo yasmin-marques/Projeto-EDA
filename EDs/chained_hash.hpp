@@ -118,6 +118,7 @@ public:
 
     // Insere um novo elemento com chave e dado
     bool insert(const Key& k, const Data& d) {
+        // verifica se a tabela precisa ser redimensionada com base no fator de carga
         if (load_factor() >= m_max_load_factor) {
             rehash(2 * m_table_size);
         }
@@ -125,15 +126,18 @@ public:
         size_t slot = hash_code(k);
         std::list<std::pair<Key, Data> >& bucket = (*m_table)[slot];
 
-        for (typename std::list<std::pair<Key, Data> >::iterator it = bucket.begin(); it != bucket.end(); ++it) {
+        // verifica se a chave já existe na lista (bucket)
+        for(typename std::list<std::pair<Key, Data> >::iterator it = bucket.begin(); it != bucket.end(); ++it) {
             num_comparisons++;
             if (it->first == k) return false;
         }
 
-        if (!bucket.empty()) {
+        // se o bucket já possui elementos, então houve colisão
+        if(!bucket.empty()) {
             num_collisions++;
         }
 
+        // insere o novo par no bucket
         bucket.push_back(std::make_pair(k, d));
         m_number_of_elements++;
         m_needs_update = true;
@@ -149,7 +153,7 @@ public:
             if(it->first == k) {
                 (*m_table)[slot].erase(it);
                 m_number_of_elements--;
-                m_needs_update = true;
+                m_needs_update = true;      // sinaliza necessidade de atualizar vetor auxiliar
                 return true;
             }
         }
@@ -159,6 +163,7 @@ public:
     // Busca e retorna referência para o dado associado a chave
     Data& search(const Key& k) {
         size_t slot = hash_code(k);
+        // Percorre o bucket correspondente
         for (auto& p : (*m_table)[slot]) {
             num_comparisons++;
             if (p.first == k) return p.second;
@@ -202,6 +207,7 @@ public:
                 return p.second;
             }
         }
+        // chave não encontrada, insere com valor padrão
         (*m_table)[slot].emplace_back(k, Data());
         m_number_of_elements++;
         m_needs_update = true;
@@ -224,6 +230,7 @@ public:
         if(new_size <= m_table_size) return;
         new_size = get_next_prime(new_size);
         auto new_table = new std::vector<std::list<std::pair<Key, Data>>>(new_size);
+        // reinsere todos os pares existentes na nova tabela
         for(const auto& bucket : *m_table) {
             for(const auto& p : bucket) {
                 size_t i = m_hashing(p.first) % new_size;

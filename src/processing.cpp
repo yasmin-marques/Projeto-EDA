@@ -22,7 +22,8 @@
 using namespace std;
 using namespace std::chrono;
 
-// Lê o conteúdo de um arquivo de texto e retorna uma string com o texto processado
+// Lê o conteúdo de um arquivo de texto, converte para minúsculas e
+// remove pontuação (exceto hífen em palavras), mantendo caracteres UTF-8 válidos
 std::string read_file(const std::string& filename) {
     std::ifstream input_file(filename);
     // verifica se o arquivo foi aberto corretamente
@@ -40,7 +41,7 @@ std::string read_file(const std::string& filename) {
     for (size_t i = 0; i < raw_text.size(); ) {
         unsigned char c = raw_text[i];
 
-        // se o caractere for comum (sem acento)
+        // se o caractere for comum (sem acento, ASCII padrão)
         if (c < 128) {
             // se for letra, número ou hífen, mantém o caractere
             if (std::isalnum(c) || c == '-') {
@@ -83,7 +84,7 @@ std::string read_file(const std::string& filename) {
     return result;  // retorna o texto limpo e processado
 }
 
-// Salva uma string em um arquivo texto
+// Salva o resultado formatado da contagem de palavras em um arquivo de saída
 void save_to_file(const std::string& filename, const std::string& raw_text) {
     std::ofstream output_file(filename);    // abre arquivo para escrita
     if(!output_file.is_open()) {

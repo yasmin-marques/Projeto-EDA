@@ -32,7 +32,7 @@ private:
     Compare m_compare;             // objeto comparador de chaves
 
     std::vector<std::pair<Key, Data>> m_sorted_pairs;   // vetor ordenado (para iterador)
-    bool m_needs_update;                                // marca se precisa reordenar os pares
+    bool m_needs_update;                                // Flag que indica se o vetor m_sorted_pairs está desatualizado e precisa ser reconstruído
     mutable size_t  num_comparisons;                    // número de comparações realizadas
     mutable size_t  num_collisions;                     // número de colisões realizadas
     int total_probes = 0;                               // número de sondagens realizadas (colisões tratadas)
@@ -157,6 +157,7 @@ public:
 
     // Insere um novo elemento com chave e dado
     bool insert(const Key& key, const Data& data) {
+        // Reorganiza a tabela se o fator de carga máximo for atingido
         if (load_factor() >= m_max_load_factor) {
             rehash(2 * m_table_size);
         }
@@ -217,14 +218,15 @@ public:
             num_comparisons++;
             if (m_table[slot].state == EMPTY) return false;
             num_comparisons++;
+            // Se encontrar a chave ativa, marca como DELETED
             if (m_table[slot].state == ACTIVE && m_table[slot].key == key) {
                 m_table[slot].state = DELETED;
                 m_number_of_elements--;
-                m_needs_update = true;
+                m_needs_update = true;   // marca que precisa atualizar vetor auxiliar
                 return true;
             }
         }
-        return false;
+        return false;   // chave não encontrada após sondagem
     }
 
     // Busca e retorna referência para o dado associado a chave
@@ -234,6 +236,7 @@ public:
             num_comparisons++;
             if (m_table[slot].state == EMPTY) break;
             num_comparisons++;
+            // Se encontrar a chave ativa, retorna a referência ao valor
             if (m_table[slot].state == ACTIVE && m_table[slot].key == key)
                 return m_table[slot].data;
         }
@@ -250,7 +253,7 @@ public:
             if (m_table[slot].state == ACTIVE && m_table[slot].key == key)
                 return true;
         }
-        return false;
+        return false;   // chave não encontrada após sondagem
     }
 
     // Atualiza o valor da chave (se existir)
@@ -263,6 +266,7 @@ public:
                 return;
             }
         }
+        // Se a chave não for encontrada, lança exceção
         throw std::out_of_range("Key not found");
     }
 
