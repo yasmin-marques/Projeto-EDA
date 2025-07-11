@@ -22,8 +22,13 @@
 using namespace std;
 using namespace std::chrono;
 
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <cctype>
+
 // Lê o conteúdo de um arquivo de texto, converte para minúsculas e
-// remove pontuação (exceto hífen em palavras), mantendo caracteres UTF-8 válidos
+// remove pontuação (exceto hífen entre letras ou números), mantendo caracteres UTF-8 válidos
 std::string read_file(const std::string& filename) {
     std::ifstream input_file(filename);
     // verifica se o arquivo foi aberto corretamente
@@ -36,45 +41,55 @@ std::string read_file(const std::string& filename) {
     buffer << input_file.rdbuf();           // lê o arquivo inteiro 
     std::string raw_text = buffer.str();    // guarda o texto lido
 
-    std::string result;                     // string onde sera montado o texto processado
+    std::string result;                     // string onde será montado o texto processado
+
     // percorre todos os caracteres do conteúdo original
     for (size_t i = 0; i < raw_text.size(); ) {
         unsigned char c = raw_text[i];
 
         // se o caractere for comum (sem acento, ASCII padrão)
         if (c < 128) {
-            // se for letra, número ou hífen, mantém o caractere
-            if (std::isalnum(c) || c == '-') {
+            // se for letra, número, mantém o caractere minúsculo
+            if (std::isalnum(c)) {
                 result += std::tolower(c);  // converte para minúsculo
+            }
+            // mantém o hífen apenas se estiver entre dois caracteres alfanuméricos
+            else if (c == '-' && i > 0 && i + 1 < raw_text.size() &&
+                     std::isalnum(raw_text[i - 1]) && std::isalnum(raw_text[i + 1])) {
+                result += '-';
             } else {
                 result += ' ';              // substitui símbolos por espaço
             }
             ++i;
         } 
-        // se for uma letra com acento ou outro símbolo especial
+        // se for uma letra com acento ou outro símbolo especial (UTF-8)
         else {
-            // UTF-8 de 2 bytes (ex: ç)
+            // UTF-8 de 2 bytes (ex: ç, é)
             if ((c & 0xE0) == 0xC0 && i + 1 < raw_text.size()) {
-                result += raw_text[i];
-                result += raw_text[i + 1];
+                unsigned char c2 = raw_text[i + 1];
+                // apenas aceita se for letra acentuada comum (evita frações e símbolos)
+                if ((unsigned char)c == 0xC3 && (c2 >= 0x80 && c2 <= 0xBF)) {
+                    // converte letras acentuadas maiúsculas para minúsculas
+                    if (c2 >= 0x80 && c2 <= 0x9E && c2 != 0x97) {
+                        c2 += 0x20; // diferença entre maiúscula/minúscula no UTF-8
+                    }
+                    result += c;
+                    result += c2;
+                }
+                else {
+                    result += ' ';
+                }
                 i += 2;
             } 
-            // UTF-8 de 3 bytes (ex: á, é, í)
-            else if ((c & 0xF0) == 0xE0 && i + 2 < raw_text.size()) {
-                result += raw_text[i];
-                result += raw_text[i + 1];
-                result += raw_text[i + 2];
-                i += 3;
+            // UTF-8 de 3 bytes ou mais
+            else if (((c & 0xF0) == 0xE0 && i + 2 < raw_text.size()) ||
+                     ((c & 0xF8) == 0xF0 && i + 3 < raw_text.size())) {
+                result += ' ';  // ignora emojis, frações, aspas especiais etc.
+                if ((c & 0xF0) == 0xE0) i += 3;
+                else i += 4;
             } 
-            // UTF-8 de 4 bytes (ex: emojis, caracteres de línguas asiáticas)
-            else if ((c & 0xF8) == 0xF0 && i + 3 < raw_text.size()) {
-                result += raw_text[i];
-                result += raw_text[i + 1];
-                result += raw_text[i + 2];
-                result += raw_text[i + 3];
-                i += 4;
-            } else {
-                // se for um byte invalido ou incompleto, ignora com espaço
+            // se for um byte inválido ou incompleto
+            else {
                 result += ' ';
                 ++i;
             }
