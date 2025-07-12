@@ -40,10 +40,10 @@ Onde:
 Exemplo:
 
 ```
-./freq dictionary_avl biblia.txt
+./freq dictionary_avl kjv-bible.txt
 ```
 
-A saída será um arquivo chamado `dictionary_avl_biblia_sagrada_english.txt` na pasta src/out.
+A saída será um arquivo chamado `dictionary_avl_kjv-bible.txt` na pasta src/out.
 
 ## Modo Interativo (para testes isolados)
 
